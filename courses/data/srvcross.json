@@ -1,0 +1,128 @@
+[
+    {
+        "title": "Altair Cross",
+        "system": "Altair",
+        "course_type": "srvcross",
+        "nearby_outfitting": "",
+        "distance_from_primary": "0.0",
+        "distance_from_sol": "0.0",
+        "notes": "",
+        "course_info": {
+            "vehicle_type": "srv",
+            "planet_name": "Darkes Hollow",
+            "port_name": "Jones Vision",
+            "gravity": "0.47",
+            "tidally_locked": false
+        },
+        "screenshots": [],
+        "created_by": "Coconut_Head_"
+    },
+    {
+        "title": "Ross 671 Cross",
+        "system": "Ross 671",
+        "course_type": "srvcross",
+        "nearby_outfitting": "",
+        "distance_from_primary": "0.0",
+        "distance_from_sol": "0.0",
+        "notes": "",
+        "course_info": {
+            "vehicle_type": "srv",
+            "planet_name": "Ross 671 1 A 2",
+            "port_name": "Verrazzanno Point",
+            "gravity": "0.24",
+            "tidally_locked": false
+        },
+        "screenshots": [],
+        "created_by": "FatHaggard"
+    },
+    {
+        "title": "Okinura 8 Cross",
+        "system": "Okinura",
+        "course_type": "srvcross",
+        "nearby_outfitting": "",
+        "distance_from_primary": "1446",
+        "distance_from_sol": "32.5",
+        "notes": "",
+        "course_info": {
+            "vehicle_type": "srv",
+            "planet_name": "Okinura 8 C",
+            "port_name": "Korniyenko Terminal",
+            "gravity": "0.1",
+            "tidally_locked": true
+        },
+        "screenshots": [],
+        "created_by": "FatHaggard"
+    },
+    {
+        "title": "Okinura 4 Cross",
+        "system": "Okinura",
+        "course_type": "srvcross",
+        "nearby_outfitting": "",
+        "distance_from_primary": "110",
+        "distance_from_sol": "32.5",
+        "notes": "",
+        "course_info": {
+            "vehicle_type": "srv",
+            "planet_name": "Okinura 4",
+            "port_name": "Okorafor Market",
+            "gravity": "0.89",
+            "tidally_locked": true
+        },
+        "screenshots": [],
+        "created_by": "FatHaggard"
+    },
+    {
+        "title": "Ferguson Cross",
+        "system": "Wasat",
+        "course_type": "srvcross",
+        "nearby_outfitting": "",
+        "distance_from_primary": "1124",
+        "distance_from_sol": "60.47",
+        "notes": "",
+        "course_info": {
+            "vehicle_type": "srv",
+            "planet_name": "Wasat A 2 E",
+            "port_name": "Ferguson Prospect",
+            "gravity": "0.12",
+            "tidally_locked": true
+        },
+        "screenshots": [],
+        "created_by": "Buckyball"
+    },
+    {
+        "title": "Elwood Cross",
+        "system": "Wasat",
+        "course_type": "srvcross",
+        "nearby_outfitting": "",
+        "distance_from_primary": "1124",
+        "distance_from_sol": "60.47",
+        "notes": "",
+        "course_info": {
+            "vehicle_type": "srv",
+            "planet_name": "Wasat A 2 E",
+            "port_name": "Elwood Camp",
+            "gravity": "0.12",
+            "tidally_locked": true
+        },
+        "screenshots": [],
+        "created_by": "Buckyball"
+    },
+    {
+        "title": "Dunbar Cross",
+        "system": "Okinura",
+        "course_type": "srvcross",
+        "nearby_outfitting": "",
+        "distance_from_primary": "2004",
+        "distance_from_sol": "32.5",
+        "notes": "",
+        "course_info": {
+            "vehicle_type": "srv",
+            "planet_name": "Okinura 10 J",
+            "port_name": "Dunbar Survey",
+            "gravity": "0.17",
+            "tidally_locked": true
+        },
+        "screenshots": [],
+        "created_by": "FatHaggard"
+    }
+]

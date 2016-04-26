@@ -1,0 +1,104 @@
+[
+    {
+        "title": "Okinura Classic",
+        "system": "Okinura",
+        "course_type": "surface",
+        "nearby_outfitting": "Koriyenko Terminal",
+        "distance_from_primary": "1145.6",
+        "distance_from_sol": "32.5",
+        "notes": "",
+        "course_info": {
+            "vehicle_type": "ship",
+            "planet_name": "Okinura 8 C",
+            "coordinates": "-57, 110",
+            "gravity": "0.1"
+        },
+        "screenshots": [],
+        "created_by": "DJ Kreeze"
+    },
+    {
+        "title": "HIP 18187 Classic",
+        "system": "HIP 18187",
+        "course_type": "surface",
+        "nearby_outfitting": "Tuttle Gateway",
+        "distance_from_primary": "0.0",
+        "distance_from_sol": "0.0",
+        "notes": "",
+        "course_info": {
+            "vehicle_type": "ship",
+            "planet_name": "HIP 18187 3 C",
+            "coordinates": "-3.14, 117",
+            "gravity": "0.04"
+        },
+        "screenshots": [],
+        "created_by": "Edgar Starwalker"
+    },
+    {
+        "title": "Inovik Classic",
+        "system": "Inovik",
+        "course_type": "surface",
+        "nearby_outfitting": "",
+        "distance_from_primary": "0.0",
+        "distance_from_sol": "0.0",
+        "notes": "",
+        "course_info": {
+            "vehicle_type": "ship",
+            "planet_name": "Inovik A 2 A",
+            "coordinates": "0, 0",
+            "gravity": "0.0"
+        },
+        "screenshots": [],
+        "created_by": "FatHaggard"
+    },
+    {
+        "title": "Skiraragea Classic",
+        "system": "Skiraragea",
+        "course_type": "surface",
+        "nearby_outfitting": "McMahon Depot",
+        "distance_from_primary": "1052",
+        "distance_from_sol": "0.0",
+        "notes": "",
+        "course_info": {
+            "vehicle_type": "ship",
+            "planet_name": "Skiraragea 7 B",
+            "coordinates": "-2.64, 34.02",
+            "gravity": "0.04"
+        },
+        "screenshots": [],
+        "created_by": "ELRinley"
+    },
+    {
+        "title": "Delkar Classic",
+        "system": "Delkar",
+        "course_type": "surface",
+        "nearby_outfitting": "",
+        "distance_from_primary": "0.0",
+        "distance_from_sol": "0.0",
+        "notes": "",
+        "course_info": {
+            "vehicle_type": "ship",
+            "planet_name": "Delkar 5 A",
+            "coordinates": "11.5341, -1.9817",
+            "gravity": "0.05"
+        },
+        "screenshots": [],
+        "created_by": "coragem_BR"
+    },
+    {
+        "title": "Lidals Classic",
+        "system": "Lidals",
+        "course_type": "surface",
+        "nearby_outfitting": "",
+        "distance_from_primary": "0.0",
+        "distance_from_sol": "0.0",
+        "notes": "",
+        "course_info": {
+            "vehicle_type": "ship",
+            "planet_name": "Lidals 8C",
+            "coordinates": "",
+            "gravity": "0.0"
+        },
+        "screenshots": [],
+        "created_by": "Joope_"
+    }
+]

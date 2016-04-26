@@ -1,0 +1,178 @@
+[
+    {
+        "title": "Wasat Cup Run",
+        "system": "Wasat",
+        "course_type": "srvrally",
+        "nearby_outfitting": "",
+        "distance_from_primary": "1121",
+        "distance_from_sol": "60.47",
+        "notes": "Relatively short stage with plenty of surprises along the way",
+        "course_info": {
+            "vehicle_type": "srv",
+            "planet_name": "Wasat A2 E",
+            "length": 50,
+            "start_port_name": "Ferguson Prospect",
+            "end_port_name": "Elwood Camp",
+            "starting_line": "",
+            "finish_line": "",
+            "gravity": "0.12",
+            "planet_type": "rock"
+        },
+        "screenshots": [],
+        "created_by": "FatHaggard"
+    },
+    {
+        "title": "Napier-Sommerfeld Rally",
+        "system": "Ross 671",
+        "course_type": "srvrally",
+        "nearby_outfitting": "",
+        "distance_from_primary": "388.81",
+        "distance_from_sol": "22.35",
+        "notes": "Difficult stage with a large plunge near the finish",
+        "course_info": {
+            "vehicle_type": "srv",
+            "planet_name": "Ross 671 B 3",
+            "length": 62,
+            "start_port_name": "Napier Installation",
+            "end_port_name": "Sommerfeld Enterprise",
+            "starting_line": "",
+            "finish_line": "",
+            "gravity": "0.2",
+            "planet_type": "rock"
+        },
+        "screenshots": [],
+        "created_by": "Coconut_Head_"
+    },
+    {
+        "title": "Plutarch Rally",
+        "system": "Plutarch",
+        "course_type": "srvrally",
+        "nearby_outfitting": "",
+        "distance_from_primary": "164.63",
+        "distance_from_sol": "38.49",
+        "notes": "Up and down course relying heavily on thruster boosting",
+        "course_info": {
+            "vehicle_type": "srv",
+            "planet_name": "Plutarch B 3 A",
+            "length": 67,
+            "start_port_name": "Kinds Holding",
+            "end_port_name": "Lopez de Villalobos Oasis",
+            "starting_line": "",
+            "finish_line": "",
+            "gravity": "0.13",
+            "planet_type": "rock"
+        },
+        "screenshots": [],
+        "created_by": "FatHaggard"
+    },
+    {
+        "title": "Ninsun Sprint",
+        "system": "Ninsun",
+        "course_type": "srvrally",
+        "nearby_outfitting": "",
+        "distance_from_primary": "2394.18",
+        "distance_from_sol": "68.37",
+        "notes": "Large hill system midcourse, very high speeds, watch out for rocks",
+        "course_info": {
+            "vehicle_type": "srv",
+            "planet_name": "Ninsun 4 A",
+            "length": 69,
+            "start_port_name": "Barreiros Arsenal",
+            "end_port_name": "Kube-Mcdowell Enterprise",
+            "starting_line": "<optional-start-description>",
+            "finish_line": "<optional-end-description>",
+            "gravity": "0.16",
+            "planet_type": "ice"
+        },
+        "screenshots": [],
+        "created_by": "Coconut_Head_"
+    },
+    {
+        "title": "Belarsuk Rally",
+        "system": "Belarsuk",
+        "course_type": "srvrally",
+        "nearby_outfitting": "",
+        "distance_from_primary": "491",
+        "distance_from_sol": "64.99",
+        "notes": "No station on surface--station in system; substantial canyons on stage.",
+        "course_info": {
+            "vehicle_type": "srv",
+            "planet_name": "Belarsuk 2 C",
+            "length": 75,
+            "start_port_name": "None",
+            "end_port_name": "None",
+            "starting_line": "",
+            "finish_line": "",
+            "gravity": "0.13",
+            "planet_type": "ice"
+        },
+        "screenshots": [],
+        "created_by": "FatHaggard"
+    },
+    {
+        "title": "Naraka Hill Climb",
+        "system": "Naraka",
+        "course_type": "srvrally",
+        "nearby_outfitting": "",
+        "distance_from_primary": "49.53",
+        "distance_from_sol": "43",
+        "notes": "Very large mountain on stage to hill climb",
+        "course_info": {
+            "vehicle_type": "srv",
+            "planet_name": "Gao",
+            "length": 77,
+            "start_port_name": "None",
+            "end_port_name": "None",
+            "starting_line": "",
+            "finish_line": "",
+            "gravity": "0.25",
+            "planet_type": "rock"
+        },
+        "screenshots": [],
+        "created_by": "Coconut_Head_"
+    },
+    {
+        "title": "Arietis",
+        "system": "TZ Arietis",
+        "course_type": "srvrally",
+        "nearby_outfitting": "",
+        "distance_from_primary": "2000.64",
+        "distance_from_sol": "14.61",
+        "notes": "",
+        "course_info": {
+            "vehicle_type": "srv",
+            "planet_name": "TZ Arietis 6 A",
+            "length": 85,
+            "start_port_name": "None",
+            "end_port_name": "None",
+            "starting_line": "",
+            "finish_line": "",
+            "gravity": "0.15",
+            "planet_type": "ice"
+        },
+        "screenshots": [],
+        "created_by": "FatHaggard"
+    },
+    {
+        "title": "Skinfaxi Crater",
+        "system": "Skinfaxi",
+        "course_type": "srvrally",
+        "nearby_outfitting": "",
+        "distance_from_primary": "997",
+        "distance_from_sol": "60.04",
+        "notes": "No station on surface--station in orbit, crater on sta",
+        "course_info": {
+            "vehicle_type": "srv",
+            "planet_name": "Skinfaxi 3 D",
+            "length": 92,
+            "start_port_name": "None",
+            "end_port_name": "None",
+            "starting_line": "",
+            "finish_line": "",
+            "gravity": "0.16",
+            "planet_type": "ice"
+        },
+        "screenshots": [],
+        "created_by": "Coconut_Head_"
+    }
+]

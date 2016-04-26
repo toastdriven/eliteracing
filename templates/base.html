@@ -1,0 +1,41 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block page_title %}Elite Racing Federation{% endblock %}</title>
+
+  {% block css %}
+    <link rel="stylesheet" href="{% static "css/reset.css" %}">
+    <link rel="stylesheet" href="{% static "css/default.css" %}">
+    {% block extra_css %}
+    {% endblock %}
+  {% endblock %}
+</head>
+<body>
+  <div id="page">
+    <header>
+      {% block header %}
+        <h1>Elite Racing Federation</h1>
+      {% endblock %}
+    </header>
+
+    <content>
+    {% block content %}
+
+    {% endblock %}
+    </content>
+
+    <footer>
+    {% block footer %}
+      Copyright {% now "Y" %}
+    {% endblock %}
+    </footer>  
+  </div>
+  
+  {% block js %}
+
+    {% block extra_js %}
+    {% endblock %}
+  {% endblock %}
+</body>
+</html>

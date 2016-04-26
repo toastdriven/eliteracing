@@ -1,0 +1,53 @@
+[
+    {
+        "title": "Altair Classic",
+        "system": "Altair",
+        "course_type": "zerogravity",
+        "nearby_outfitting": "Feynman Terminal, Bhritzameno",
+        "distance_from_primary": "0.0",
+        "distance_from_sol": "0.0",
+        "notes": "",
+        "course_info": {
+            "vehicle_type": "ship",
+            "station_name": "Solo Orbiter",
+            "number_of_rings": 2,
+            "length": 12
+        },
+        "screenshots": [],
+        "created_by": "Coconut_Head_"
+    },
+    {
+        "title": "Blackman Classic",
+        "system": "LHS 3356",
+        "course_type": "zerogravity",
+        "nearby_outfitting": "Feynman Terminal, Bhritzameno",
+        "distance_from_primary": "0.0",
+        "distance_from_sol": "0.0",
+        "notes": "",
+        "course_info": {
+            "vehicle_type": "ship",
+            "station_name": "Blackman Terminal",
+            "number_of_rings": 2,
+            "length": 12
+        },
+        "screenshots": [],
+        "created_by": "FatHaggard"
+    },
+    {
+        "title": "Okinura Classic",
+        "system": "Okinura",
+        "course_type": "zerogravity",
+        "nearby_outfitting": "Fisher Terminal",
+        "distance_from_primary": "343",
+        "distance_from_sol": "32.5",
+        "notes": "",
+        "course_info": {
+            "vehicle_type": "ship",
+            "station_name": "Fisher Terminal",
+            "number_of_rings": 2,
+            "length": 13
+        },
+        "screenshots": [],
+        "created_by": "Coconut_Head_"
+    }
+]
