@@ -57,10 +57,8 @@ class Course(models.Model):
         return super(Course, self).save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return ''
-        # FIXME: Implement the detail views!
         return reverse(
-            'course_detail',
+            'courses_detail',
             kwargs={
                 'pk': self.pk,
             }
