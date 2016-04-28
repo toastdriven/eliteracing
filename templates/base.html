@@ -17,9 +17,49 @@
       {% block header %}
         <h1>Elite Racing Federation</h1>
       {% endblock %}
+
+      <div>
+        <form method="GET" action="{# % url 'courses_search' % #}">
+          <input type="text" name="q" value="">
+          <button>Search</button>
+        </form>
+        <!--
+        <ul>
+          <li>
+            Login 
+          </li>
+          <li>
+            Sign-Up 
+          </li>
+        </ul>
+        -->
+        <nav>
+          <ul>
+            <li>
+              <a href="{% url 'courses_list' %}">Courses</a>
+            </li>
+            <li>
+              <a href="{% url 'pages_show_page' slug='builds' %}">Builds</a>
+            </li>
+            <li>
+              <a href="{% url 'pages_show_page' slug='erf' %}">ERF</a>
+            </li>
+            <li>
+              <a href="{% url 'pages_show_page' slug='hosting' %}">Hosting A Race</a>
+            </li>
+            <li>
+              <a href="{% url 'docs_api_v1_courses' %}">API</a>
+            </li>
+            <li>
+              <a href="{% url 'pages_show_page' slug='about' %}">About</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <content>
+    {% block breadcrumbs %}{% endblock %}
     {% block content %}
 
     {% endblock %}
@@ -27,7 +67,22 @@
 
     <footer>
     {% block footer %}
-      Copyright {% now "Y" %}
+      <div>
+        Copyright {% now "Y" %} - Elite Racing Federation
+      </div>
+      <div>
+        Code by CMDR Branch 
+        (<a href="http://toastdriven.com/"><img src="{% static "img/pixel_toast.png" %}"></a>
+        <a href="http://toastdriven.com/">Toast Driven</a>)
+      </div>
+      <div>
+        This site is open-source &amp; available on 
+        <a href="https://github.com/toastdriven/eliteracing">GitHub</a>.
+      </div>
+      <div>
+        Elite: Dangerous and all associated media are the intellectual property 
+        of <a href="http://www.frontier.co.uk/">Frontier Developments.</a>
+      </div>
     {% endblock %}
     </footer>  
   </div>

@@ -8,7 +8,7 @@ body {
   display: flex;
   flex-direction: column;
   flex: 1;
-  max-width: 800px;
+  max-width: 1080px;
 }
 
 header {
@@ -21,8 +21,16 @@ header {
   padding: 10px 20px;
 }
 
-nav {
+nav ul {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-end;
+}
 
+nav ul li {
+  list-style: none;
+  margin: 0px 2px;
+  padding: 5px;
 }
 
 content {
@@ -36,3 +44,8 @@ footer {
   justify-content: center;
 }
 
+
+ul.breadcrumbs {
+  display: flex;
+  justify-content: flex-start;
+}

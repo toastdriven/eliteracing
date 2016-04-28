@@ -15,6 +15,8 @@
   * Pagination
   * Perhaps caching?
 
+* (DONE) Add API docs views
+* (DONE) Add E:D license disclaimer to home page footer
 * Flesh out the course views
 
   * List
@@ -32,9 +34,7 @@
 * Finish HTML/CSS design
 * More header shots
 * Add in all the original zero gravity series courses
-* Add API docs views
 * Add About/Links view
-* Add E:D license disclaimer to home page footer
 * README for setup/testing/contributions
 * Push the code to GitHub (w/ LICENSE)
 
