@@ -1,15 +1,23 @@
 import time
 
+from django.conf.urls import url
 from django.db.models import Q
 
-from restless.exceptions import BadRequest
+from restless.exceptions import BadRequest, NotFound
 from restless.dj import DjangoResource
 
 from courses.models import Course
 
 
 class CourseResource(DjangoResource):
-    base_qs = Course.objects.all()
+    def __init__(self, *args, **kwargs):
+        super(CourseResource, self).__init__(*args, **kwargs)
+        self.http_methods.update({
+            'random_course': {
+                'GET': 'random_course',
+            }
+        })
+        self.base_qs = Course.objects.all()
 
     def _get_start(self):
         if not 'start' in self.request.GET:
@@ -192,3 +200,23 @@ class CourseResource(DjangoResource):
             }
 
         return prepped
+
+    def random_course(self):
+        # Order by random, then take the first one.
+        random_order = self.base_qs.order_by('?')
+
+        if random_order.exists():
+            return random_order[0]
+
+        raise NotFound('No courses found.')
+
+    @classmethod
+    def urls(cls, name_prefix=None):
+        urlpatterns = super(CourseResource, cls).urls(name_prefix=name_prefix)
+        return urlpatterns + [
+            url(
+                r'^random/$', 
+                cls.as_view('random_course'), 
+                name=cls.build_url_name('random_course', name_prefix)
+            ),
+        ]
