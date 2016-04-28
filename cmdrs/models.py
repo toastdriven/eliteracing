@@ -7,10 +7,10 @@ from django.utils import timezone
 
 
 class Commander(models.Model):
-    user = models.ForeignKey(User, null=True)
-    name = models.CharField(max_length=255)
-    api_token = models.CharField(max_length=64, blank=True)
-    created = models.DateTimeField(default=timezone.now)
+    user = models.ForeignKey(User, null=True, blank=True)
+    name = models.CharField(max_length=255, unique=True, db_index=True)
+    api_token = models.CharField(max_length=64, blank=True, db_index=True)
+    created = models.DateTimeField(default=timezone.now, db_index=True)
     updated = models.DateTimeField(default=timezone.now)
 
     class Meta:
@@ -19,10 +19,13 @@ class Commander(models.Model):
     def __unicode__(self):
         return self.name
 
+    def generate_token(self):
+        unique = str(uuid.uuid4())
+        return hashlib.md5(unique).hexdigest()
+
     def save(self, *args, **kwargs):
         if not self.api_token:
-            unique = str(uuid.uuid4())
-            self.api_token = hashlib.md5(unique).hexdigest()
+            self.api_token = self.generate_token()
 
         self.updated = timezone.now()
         return super(Commander, self).save(*args, **kwargs)

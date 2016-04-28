@@ -11,7 +11,7 @@ from .views import (
 
 urlpatterns = [
     url(
-        r'^latest/$', 
+        r'^$', 
         latest_posts, 
         name='news_latest'
     ),

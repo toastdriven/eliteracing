@@ -20,8 +20,12 @@ class Course(models.Model):
     ]
 
     title = models.CharField(max_length=255)
-    system = models.CharField(max_length=255)
-    course_type = models.CharField(max_length=16, choices=COURSE_TYPES)
+    system = models.CharField(max_length=255, db_index=True)
+    course_type = models.CharField(
+        max_length=16, 
+        choices=COURSE_TYPES,
+        db_index=True
+    )
     nearby_outfitting = models.CharField(max_length=128, blank=True, default='')
     distance_from_primary = models.DecimalField(
         max_digits=8, 
@@ -35,7 +39,7 @@ class Course(models.Model):
     )
     notes = models.TextField(blank=True, default='')
     created_by = models.ForeignKey(Commander)
-    created = models.DateTimeField(default=timezone.now)
+    created = models.DateTimeField(default=timezone.now, db_index=True)
     updated = models.DateTimeField(default=timezone.now)
 
     class Meta:
@@ -76,7 +80,8 @@ class BaseCourseInfo(models.Model):
         max_length=8, 
         blank=True,
         choices=VEHICLE_TYPES, 
-        default=VEHICLE_SHIP
+        default=VEHICLE_SHIP,
+        db_index=True
     )
     created = models.DateTimeField(default=timezone.now)
     updated = models.DateTimeField(default=timezone.now)
@@ -86,7 +91,7 @@ class BaseCourseInfo(models.Model):
         ordering = ('-created',)
 
     def __unicode__(self):
-        return u"{} for {}".format(self.__class__.__name__, self.course.name)
+        return u"{} for {}".format(self.__class__.__name__, self.course.title)
 
     def save(self, *args, **kwargs):
         self.updated = timezone.now()
@@ -97,7 +102,7 @@ class ZeroGravityCourse(BaseCourseInfo):
     """
     The traditional/original race type around a station.
     """
-    station_name = models.CharField(max_length=255)
+    station_name = models.CharField(max_length=255, db_index=True)
     number_of_rings = models.PositiveIntegerField(default=1)
     length = models.PositiveIntegerField(help_text='In Kilometers')
 
@@ -112,7 +117,7 @@ class SurfaceCourse(BaseCourseInfo):
     """
     A ship-based surface race, such as canyon loops.
     """
-    planet_name = models.CharField(max_length=255)
+    planet_name = models.CharField(max_length=255, db_index=True)
     coordinates = models.CharField(max_length=64)
     gravity = models.DecimalField(max_digits=5, decimal_places=2, default='1.0')
 
@@ -147,7 +152,7 @@ class SRVRallyCourse(BaseCourseInfo):
         (PLANET_GAS, 'gas'),
     ]
 
-    planet_name = models.CharField(max_length=255)
+    planet_name = models.CharField(max_length=255, db_index=True)
     length = models.PositiveIntegerField(help_text='In Kilometers')
     start_port_name = models.CharField(max_length=255)
     end_port_name = models.CharField(max_length=255)
@@ -157,7 +162,8 @@ class SRVRallyCourse(BaseCourseInfo):
     planet_type = models.CharField(
         max_length=32, 
         choices=PLANET_TYPES, 
-        default=PLANET_ROCK
+        default=PLANET_ROCK, 
+        db_index=True
     )
 
     def save(self, *args, **kwargs):
@@ -172,8 +178,8 @@ class SRVCrossCourse(BaseCourseInfo):
     An SRV-based port race, involving using the port as a racetrack, usually
     in a loop.
     """
-    planet_name = models.CharField(max_length=255)
-    port_name = models.CharField(max_length=255)
+    planet_name = models.CharField(max_length=255, db_index=True)
+    port_name = models.CharField(max_length=255, db_index=True)
     gravity = models.DecimalField(max_digits=5, decimal_places=2, default='1.0')
     tidally_locked = models.BooleanField(default=False)
 
@@ -189,8 +195,8 @@ class StadiumCourse(BaseCourseInfo):
     A ship-based port race, involving flying in/around/through man-made
     structures within the port.
     """
-    planet_name = models.CharField(max_length=255)
-    port_name = models.CharField(max_length=255)
+    planet_name = models.CharField(max_length=255, db_index=True)
+    port_name = models.CharField(max_length=255, db_index=True)
     gravity = models.DecimalField(max_digits=5, decimal_places=2, default='1.0')
 
     def save(self, *args, **kwargs):
@@ -205,13 +211,14 @@ class CourseScreenshot(models.Model):
     shot = models.ImageField(max_length=255)
     is_primary = models.BooleanField(
         default=False, 
-        help_text="Is this the main/best image the user should see?"
+        help_text="Is this the main/best image the user should see?",
+        db_index=True
     )
     is_annotated = models.BooleanField(
         default=False, 
         help_text="Does this image have a course drawn on top of it?"
     )
-    created = models.DateTimeField(default=timezone.now)
+    created = models.DateTimeField(default=timezone.now, db_index=True)
     updated = models.DateTimeField(default=timezone.now)
 
     class Meta:

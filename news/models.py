@@ -10,12 +10,12 @@ from django.utils import timezone
 class NewsPost(models.Model):
     author = models.ForeignKey(User)
     title = models.CharField(max_length=255)
-    slug = models.SlugField(blank=True)
+    slug = models.SlugField(blank=True, db_index=True)
     content = models.TextField(
         help_text='Accepts Markdown, like Reddit comments but better.'
     )
     content_html = models.TextField(blank=True, default='')
-    created = models.DateTimeField(default=timezone.now)
+    created = models.DateTimeField(default=timezone.now, db_index=True)
     updated = models.DateTimeField(default=timezone.now)
 
     class Meta:
