@@ -2,14 +2,7 @@
 
 * (DONE) Install dj_database_url
 * (DONE) Setup all the Admins
-* Flesh out the course views
-
-  * List
-  * Detail
-  * Random Course
-
-* Add EDDB links on systems/stations
-* Finish API
+* (DONE) Finish API
 
   * Ordering (ascending/descending by date)
   * Filtering
@@ -17,11 +10,16 @@
     * By vehicle type (needs an index)
     * By course type (needs an index)
     * By system (needs an index)
-    * By station (needs an index)
     * By CMDR (doesn't need an index! \o/)
 
   * Pagination
   * Perhaps caching?
+
+* Flesh out the course views
+
+  * List
+  * Detail
+  * Random Course
 
 * News tests
 * Pages tests
@@ -46,6 +44,7 @@
 * Create pages for all the things on the Reddit sub wiki?
 * Use some JS/Ractive on the courses for filtering?
 * Create EDDB system/station importer (for suggestions/validation in the future)
+* Add EDDB links on systems/stations
 
 
 # TODO Launch

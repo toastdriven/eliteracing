@@ -1,5 +1,7 @@
 import time
 
+from django.db.models import Q
+
 from restless.exceptions import BadRequest
 from restless.dj import DjangoResource
 
@@ -7,31 +9,121 @@ from courses.models import Course
 
 
 class CourseResource(DjangoResource):
-    def list(self):
+    base_qs = Course.objects.all()
+
+    def _get_start(self):
+        if not 'start' in self.request.GET:
+            return None
+
         try:
-            start = int(self.request.GET.get('start', 0)) or None
+            return int(self.request.GET.get('start', 0))
+        except ValueError:
+            raise BadRequest("Invalid start parameter.")
+
+    def _get_limit(self):
+        try:
             limit = int(self.request.GET.get('limit', 100))
         except ValueError:
-            raise BadRequest("Invalid start/limit parameters.")
+            raise BadRequest("Invalid limit parameter.")
 
         if limit > 1000:
             limit == 1000
 
-        if start is not None:
-            return Course.objects.filter(pk__lte=start)[:limit]
+        return limit
 
-        return Course.objects.all()[:limit]
+    def _get_order(self):
+        order = self.request.GET.get('order', 'desc')
+
+        if order not in ('asc', 'desc'):
+            raise BadRequest("Invalid order parameter.")
+
+        if order == 'asc':
+            return 'created'
+        
+        return '-created'
+
+    def _apply_filters(self, qs):
+        """
+        This method takes a `QuerySet` & adds on the various filtering calls.
+
+        It returns a *new* QS, so be sure to store the result & use that rather
+        than the QS passed it.
+        """
+        if 'system' in self.request.GET:
+            qs = qs.filter(system__istartswith=self.request.GET['system'])
+
+        if 'course_type' in self.request.GET:
+            course_type = self.request.GET['course_type']
+
+            if course_type not in (
+                'all', 'zerogravity', 'surface', 'srvrally', 'srvcross', 
+                'stadium'
+            ):
+                raise BadRequest("Invalid course_type parameter.")
+
+            if course_type != 'all':
+                qs = qs.filter(course_type=course_type)
+
+        if 'created_by' in self.request.GET:
+            qs = qs.filter(
+                created_by__name__iexact=self.request.GET['created_by']
+            )
+
+        if 'vehicle_type' in self.request.GET:
+            vehicle_type = self.request.GET['vehicle_type']
+
+            if vehicle_type not in ('all', 'ship', 'srv'):
+                raise BadRequest("Invalid vehicle_type parameter.")
+
+            # We're cheating a bit here, since we're not really filtering by
+            # the provided value, but since we know what vehicle type applies
+            # to what kind of course, this gives a simpler query (though one
+            # we'll have to update if/when new course types get added).
+            if vehicle_type == 'ship':
+                qs = qs.filter(
+                    Q(course_type='zerogravity') |
+                    Q(course_type='surface') |
+                    Q(course_type='stadium')
+                )
+            elif vehicle_type == 'srv':
+                qs = qs.filter(
+                    Q(course_type='srvrally') |
+                    Q(course_type='srvcross')
+                )
+
+        return qs
+
+    def list(self):
+        # Apply any provided `GET` filters.
+        qs = self._apply_filters(self.base_qs)
+
+        # Check for a starting offset & ordering.
+        start = self._get_start()
+        order = self._get_order()
+
+        if start is not None:
+            if order == 'desc':
+                qs = qs.filter(pk__lte=start)
+            else:
+                qs = qs.filter(pk__gte=start)
+
+        # Apply ordering just before slicing.
+        qs = qs.order_by('created')
+        
+        # Slice it down to a page-worth.
+        limit = self._get_limit()
+        return qs[:limit]
 
     def detail(self, pk):
         return Course.objects.get(id=pk)
 
     def wrap_list_response(self, data):
-        # FIXME: Add pagination URLs here.
         return {
             'meta': {
-                'start': int(self.request.GET.get('start', 0)) or None,
-                'limit': int(self.request.GET.get('limit', 100)),
-                'total': Course.objects.all().count(),
+                'start': self._get_start(),
+                'limit': self._get_limit(),
+                # Re-apply all the filters to run a count.
+                'total': self._apply_filters(self.base_qs).count(),
             },
             'courses': data,
         }

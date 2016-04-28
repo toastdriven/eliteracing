@@ -21,6 +21,16 @@ date (newest courses first).
 
 * `start`: An integer of the `id` to start at. Default is `null`.
 * `limit`: A limit on how many results should be returned. Default is `100`.
+* `order`: A string for controlling whether results are ordered by creation
+    date. Accepts `asc` or `desc` options. Default is `desc` (latest
+    first).
+* `system`: A string for searching based on system name (case-insensitive).
+* `vehicle_type`: A string for choosing vehicle type. Accepts `all`, `ship` or
+    `srv` options. Default is `all`.
+* `course_type`: A string for choosing course type. Accepts `all`, 
+    `zerogravity`, `surface`, `srvrally`, `srvcross` or `stadium` options.
+    Default is `all`.
+* `created_by`: A CMDR name for who created the courses (case-insensitive).
 
 Format:
 
@@ -29,8 +39,6 @@ Format:
             "start": <int>,
             "limit": <int>,
             "total": <int>,
-            "prev": "<url-for-prev-page-of-results>"|null,
-            "next": "<url-for-next-page-of-results>"|null,
         },
         "courses": [
             {
