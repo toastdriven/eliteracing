@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block page_title %}{{ block.super }}: Documentation for {{ title }}{% endblock %}
+
+{% block breadcrumbs %}
+<ul class="breadcrumbs">
+  <li>
+    <a href="{% url 'home' %}">Home</a>
+  </li>
+  <li>
+    <a href="{% url 'docs_list' %}">Documentation</a>
+  </li>
+  <li>
+    {{ title }}
+  </li>
+</ul>
+{% endblock %}
+
+{% block content %}
+  {{ content|safe }}
+{% endblock %}

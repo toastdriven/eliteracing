@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block page_title %}{{ block.super }}: Documentation{% endblock %}
+
+{% block content %}
+<h2>Documentation</h2>
+
+<p>
+  Here are some details around parts of the site that have extra functionality.
+  Specifically, the documentation for the API is here.
+</p>
+
+<hr>
+
+<h3>API</h3>
+
+<p>
+  This documents the first version of the website's API. It will expand with
+  time, but has a working "courses" section now. New fields may be added with
+  time, but any breaking changes (such as a renamed field or 
+  different/incompatible structure) will result in a new API version.
+</p>
+
+<dl>
+  <dt>v1</dt>
+  <dd><a href="{% url 'docs_api_v1_courses' %}">Courses</a></dd>
+</dl>
+{% endblock %}

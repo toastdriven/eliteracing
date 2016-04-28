@@ -6,9 +6,6 @@ All requests/responses should be provided using JSON bodies.
 
 `GET` methods do not require authentication of any kind.
 
-`POST`/`PUT`/`DELETE` methods require authentication. Please refer to the
-Authentication docs for further details.
-
 
 ## `GET` List
 

@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^$', index, name='home'),
     url(r'^admin/', admin.site.urls),
     url(r'^api/', include('api.urls')),
+    url(r'^docs/', include('docs.urls')),
     url(r'^news/', include('news.urls')),
     url(r'^', include('pages.urls')),
 ]
