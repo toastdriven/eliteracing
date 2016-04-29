@@ -1,4 +1,5 @@
 from django.core.paginator import Paginator, EmptyPage
+from django.db.models import Q
 from django.http import Http404
 from django.shortcuts import get_object_or_404, render
 
@@ -6,7 +7,28 @@ from .models import Course
 
 
 def list(request):
-    paginator = Paginator(Course.objects.all(), 20)
+    qs = Course.objects.all()
+    course_types = [ct[0] for ct in Course.COURSE_TYPES]
+
+    vehicle_type = request.GET.get('vehicle_type', 'all')
+    course_type = request.GET.get('course_type', 'all')
+
+    if vehicle_type == 'ship':
+        qs = qs.filter(
+            Q(course_type='zerogravity') |
+            Q(course_type='surface') |
+            Q(course_type='stadium')
+        )
+    elif vehicle_type == 'srv':
+        qs = qs.filter(
+            Q(course_type='srvrally') |
+            Q(course_type='srvcross')
+        )
+
+    if course_type in course_types:
+        qs = qs.filter(course_type=course_type)
+
+    paginator = Paginator(qs, 20)
 
     try:
         page = paginator.page(int(request.GET.get('page', 1)))
@@ -15,6 +37,8 @@ def list(request):
 
     return render(request, 'courses/list.html', {
         'page': page,
+        'vehicle_type': vehicle_type,
+        'course_type': course_type,
     })
 
 

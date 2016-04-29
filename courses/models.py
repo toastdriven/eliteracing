@@ -140,14 +140,14 @@ class SRVRallyCourse(BaseCourseInfo):
     PLANET_AMMONIA = 'ammonia'
     PLANET_GAS = 'gas'
     PLANET_TYPES = [
-        (PLANET_ROCK, 'rock'),
-        (PLANET_ICE, 'ice'),
-        (PLANET_LAVA, 'lava'),
-        (PLANET_METALLIC, 'metallic'),
-        (PLANET_WATER, 'water'),
-        (PLANET_EARTH, 'earth-like'),
-        (PLANET_AMMONIA, 'ammonia'),
-        (PLANET_GAS, 'gas'),
+        (PLANET_ROCK, 'Rock'),
+        (PLANET_ICE, 'Ice'),
+        (PLANET_LAVA, 'Lava'),
+        (PLANET_METALLIC, 'Metallic'),
+        (PLANET_WATER, 'Water'),
+        (PLANET_EARTH, 'Earth-Like'),
+        (PLANET_AMMONIA, 'Ammonia'),
+        (PLANET_GAS, 'Gas'),
     ]
 
     planet_name = models.CharField(max_length=255, db_index=True)

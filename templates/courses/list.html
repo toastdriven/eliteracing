@@ -16,9 +16,87 @@
 {% block content %}
 <h2>Courses</h2>
 
-{% for course in page %}
-  {% include 'courses/includes/small_course.html' %}
-{% endfor %}
+<div class="sidebar">
+  <form method="GET" action=".">
+    <div>
+      <strong>Vehicle Type:</strong>
+
+      <ul>
+        <li>
+          <label>
+            <input type="radio" name="vehicle_type" value="all"{% if vehicle_type == 'all' %} checked="checked"{% endif %}>
+            All
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="vehicle_type" value="ship"{% if vehicle_type == 'ship' %} checked="checked"{% endif %}>
+            Ship
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="vehicle_type" value="srv"{% if vehicle_type == 'srv' %} checked="checked"{% endif %}>
+            SRV
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <strong>Course Type:</strong>
+
+      <ul>
+        <li>
+          <label>
+            <input type="radio" name="course_type" value="all"{% if course_type == 'all' %} checked="checked"{% endif %}>
+            All
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="course_type" value="zerogravity"{% if course_type == 'zerogravity' %} checked="checked"{% endif %}>
+            Zero Gravity
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="course_type" value="surface"{% if course_type == 'surface' %} checked="checked"{% endif %}>
+            Surface
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="course_type" value="srvrally"{% if course_type == 'srvrally' %} checked="checked"{% endif %}>
+            SRV Rally
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="course_type" value="srvcross"{% if course_type == 'srvcross' %} checked="checked"{% endif %}>
+            SRV Cross
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="course_type" value="stadium"{% if course_type == 'stadium' %} checked="checked"{% endif %}>
+            Stadium
+          </label>
+        </li>
+      </ul>
+    </div>
+    
+    <div>
+      <button>Filter Results</button>
+    </div>
+  </form>
+</div>
+
+<div class="list">
+  {% for course in page %}
+    {% include 'courses/includes/small_course.html' %}
+  {% endfor %}  
+</div>
 
 {% include 'includes/pagination.html' %}
 {% endblock %}

@@ -1,0 +1,27 @@
+{% with course.srvrallycourse as info %}
+<ul class="course-specifics">
+  <li>
+    <strong>Vehicle Type:</strong> {{ info.get_vehicle_type_display }}
+  </li>
+  <li>
+    <strong>Planet:</strong> {{ info.planet_name }}
+  </li>
+  <li>
+    <strong>Length:</strong> {{ info.length }} km
+  </li>
+  <li>
+    <strong>Start Port:</strong> {{ info.start_port_name }}
+    {% if info.starting_line %}(Start Line: {{ info.starting_line }}){% endif %}
+  </li>
+  <li>
+    <strong>Finish Port:</strong> {{ info.end_port_name }}
+    {% if info.finish_line %}(Finish Line: {{ info.finish_line }}){% endif %}
+  </li>
+  <li>
+    <strong>Planet Type:</strong> {{ info.get_planet_type_display }}
+  </li>
+  <li>
+    <strong>Gravity:</strong> {{ info.gravity }}
+  </li>
+</ul>
+{% endwith %}

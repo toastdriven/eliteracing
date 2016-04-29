@@ -1,0 +1,16 @@
+{% with course.zerogravitycourse as info %}
+<ul class="course-specifics">
+  <li>
+    <strong>Vehicle Type:</strong> {{ info.get_vehicle_type_display }}
+  </li>
+  <li>
+    <strong>Station:</strong> {{ info.station_name }}
+  </li>
+  <li>
+    <strong>Number of Rings:</strong> {{ info.number_of_rings }}
+  </li>
+  <li>
+    <strong>Length:</strong> {{ info.length }} km
+  </li>
+</ul>
+{% endwith %}

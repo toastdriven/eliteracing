@@ -30,12 +30,46 @@
       <strong>System:</strong> {{ course.system }}
     </li>
     <li>
+      <strong>Nearby Outfitting:</strong> {{ course.nearby_outfitting }}
+    </li>
+    <li>
+      <strong>Distance From Primary:</strong> {{ course.distance_from_primary }} Ls
+    </li>
+    <li>
+      <strong>Distance From Sol:</strong> {{ course.distance_from_sol }} Ly
+    </li>
+    <li>
       <strong>Created By:</strong> {{ course.created_by.name }}
+      on {{ course.created|date:"F j, Y" }}
     </li>
   </ul>
 
+  <h3>Course Specifics</h3>
+
+  {% if course.zerogravitycourse %}
+    {% include "courses/includes/zerogravity.html" %}
+  {% endif %}
+  {% if course.surfacecourse %}
+    {% include "courses/includes/surface.html" %}
+  {% endif %}
+  {% if course.srvrallycourse %}
+    {% include "courses/includes/srvrally.html" %}
+  {% endif %}
+  {% if course.srvcrosscourse %}
+    {% include "courses/includes/srvcross.html" %}
+  {% endif %}
+  {% if course.stadiumcourse %}
+    {% include "courses/includes/stadium.html" %}
+  {% endif %}
+
+  <h3>Notes:</h3>
+
   <div class="notes">
-    {{ course.notes|linebreaksbr }}
+    {% if course.notes %}
+      {{ course.notes|linebreaksbr }}
+    {% else %}
+      None
+    {% endif %}
   </div>
 
   <div class="screenshots">

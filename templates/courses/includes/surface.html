@@ -1,0 +1,16 @@
+{% with course.surfacecourse as info %}
+<ul class="course-specifics">
+  <li>
+    <strong>Vehicle Type:</strong> {{ info.get_vehicle_type_display }}
+  </li>
+  <li>
+    <strong>Planet:</strong> {{ info.planet_name }}
+  </li>
+  <li>
+    <strong>Coordinates:</strong> {{ info.coordinates }}
+  </li>
+  <li>
+    <strong>Gravity:</strong> {{ info.gravity }}
+  </li>
+</ul>
+{% endwith %}

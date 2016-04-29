@@ -18,12 +18,11 @@
 * (DONE) Add API docs views
 * (DONE) Add E:D license disclaimer to home page footer
 * (DONE) News templates
-* (Done) Pages templates
-* Flesh out the course views
+* (DONE) Pages templates
+* (DONE) Flesh out the course views
 
   * List
   * Detail
-  * Random Course
 
 * News tests
 * Pages tests
@@ -38,7 +37,7 @@
 * Add in all the original zero gravity series courses
 * Add About/Links view
 * README for setup/testing/contributions
-* Push the code to GitHub (w/ LICENSE)
+* (DONE) Push the code to GitHub (w/ LICENSE)
 
 
 # TODO Maybe Pre-launch

@@ -5,7 +5,7 @@
     </div>
   {% endif %}
   <div>
-    {{ page.number }}
+    Page {{ page.number }} of {{ page.paginator.num_pages }}
   </div>
   {% if page.has_next %}
     <div>
