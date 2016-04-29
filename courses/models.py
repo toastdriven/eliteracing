@@ -60,7 +60,7 @@ class Course(models.Model):
         return reverse(
             'courses_detail',
             kwargs={
-                'pk': self.pk,
+                'id': self.pk,
             }
         )
 

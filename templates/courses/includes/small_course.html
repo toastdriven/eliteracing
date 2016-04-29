@@ -1,0 +1,27 @@
+<div class="small-course">
+  <h3>
+    <a href="{{ course.get_absolute_url }}">{{ course.title }}</a>
+  </h3>
+
+  <ul class="characteristics">
+    <li>
+      <strong>Type:</strong> {{ course.get_course_type_display }}
+    </li>
+    <li>
+      <strong>System:</strong> {{ course.system }}
+    </li>
+    <li>
+      <strong>Created By:</strong> {{ course.created_by.name }}
+    </li>
+  </ul>
+
+  <div class="notes">
+    {{ course.notes|linebreaksbr }}
+  </div>
+
+  <div class="screenshot">
+    {% if course.screenshots.count %}
+      <img src="{{ course.screenshots.all.0.shot.url }}">
+    {% endif %}
+  </div>
+</div>

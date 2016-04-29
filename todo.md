@@ -18,7 +18,7 @@
 * (DONE) Add API docs views
 * (DONE) Add E:D license disclaimer to home page footer
 * (DONE) News templates
-* Pages templates
+* (Done) Pages templates
 * Flesh out the course views
 
   * List

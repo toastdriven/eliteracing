@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block page_title %}{{ block.super }}: {{ course.title }}{% endblock %}
+
+{% block breadcrumbs %}
+<ul class="breadcrumbs">
+  <li>
+    <a href="{% url 'home' %}">Home</a>
+  </li>
+  <li>
+    <a href="{% url 'courses_list' %}">Courses</a>
+  </li>
+  <li>
+    {{ course.title|truncatewords:5 }}
+  </li>
+</ul>
+{% endblock %}
+
+{% block content %}
+<div class="course-detail">
+  <h2>
+    <a href="{{ course.get_absolute_url }}">{{ course.title }}</a>
+  </h2>
+
+  <ul class="characteristics">
+    <li>
+      <strong>Type:</strong> {{ course.get_course_type_display }}
+    </li>
+    <li>
+      <strong>System:</strong> {{ course.system }}
+    </li>
+    <li>
+      <strong>Created By:</strong> {{ course.created_by.name }}
+    </li>
+  </ul>
+
+  <div class="notes">
+    {{ course.notes|linebreaksbr }}
+  </div>
+
+  <div class="screenshots">
+    {% for screenshot in course.screenshots.all %}
+      <img src="{{ screenshot.shot.url }}">
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

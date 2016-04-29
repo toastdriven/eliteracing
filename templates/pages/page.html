@@ -1,7 +1,20 @@
-{% extends "../base.html" %}
+{% extends "base.html" %}
 
 {% block page_title %}{{ block.super }}: {{ page.title }}{% endblock %}
 
+{% block breadcrumbs %}
+<ul class="breadcrumbs">
+  <li>
+    <a href="{% url 'home' %}">Home</a>
+  </li>
+  <li>
+    {{ page.title|truncatewords:5 }}
+  </li>
+</ul>
+{% endblock %}
+
 {% block content %}
-  {{ block.content_html }}
+  <h2>{{ page.title }}</h2>
+
+  {{ page.content_html|safe }}
 {% endblock %}

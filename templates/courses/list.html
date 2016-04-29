@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block page_title %}{{ block.super }}: Courses{% endblock %}
+
+{% block breadcrumbs %}
+<ul class="breadcrumbs">
+  <li>
+    <a href="{% url 'home' %}">Home</a>
+  </li>
+  <li>
+    Courses
+  </li>
+</ul>
+{% endblock %}
+
+{% block content %}
+<h2>Courses</h2>
+
+{% for course in page %}
+  {% include 'courses/includes/small_course.html' %}
+{% endfor %}
+
+{% include 'includes/pagination.html' %}
+{% endblock %}
