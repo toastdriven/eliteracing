@@ -14,30 +14,37 @@ from .models import (
 class ZeroGravityCourseInline(admin.StackedInline):
     model = ZeroGravityCourse
     max_num = 1
+    exclude = ('vehicle_type', 'created', 'updated')
 
 
 class SurfaceCourseInline(admin.StackedInline):
     model = SurfaceCourse
     max_num = 1
+    exclude = ('vehicle_type', 'created', 'updated')
 
 
 class SRVRallyCourseInline(admin.StackedInline):
     model = SRVRallyCourse
     max_num = 1
+    exclude = ('vehicle_type', 'created', 'updated')
 
 
 class SRVCrossCourseInline(admin.StackedInline):
     model = SRVCrossCourse
     max_num = 1
+    exclude = ('vehicle_type', 'created', 'updated')
 
 
 class StadiumCourseInline(admin.StackedInline):
     model = ZeroGravityCourse
     max_num = 1
+    exclude = ('vehicle_type', 'created', 'updated')
 
 
 class CourseScreenshotInline(admin.StackedInline):
     model = CourseScreenshot
+    extra = 1
+    exclude = ('created', 'updated')
 
 
 class CourseAdmin(admin.ModelAdmin):
@@ -51,7 +58,7 @@ class CourseAdmin(admin.ModelAdmin):
         CourseScreenshotInline,
     ]
     list_display = ('title', 'system', 'course_type', 'created_by', 'created')
-    list_filters = ('course_type',)
+    list_filter = ('course_type',)
     search_fields = ('title', 'system', 'notes', 'created_by__name')
     raw_id_fields = ('created_by',)
 

@@ -91,7 +91,6 @@ class BaseCourseInfo(models.Model):
         max_length=8, 
         blank=True,
         choices=VEHICLE_TYPES, 
-        default=VEHICLE_SHIP,
         db_index=True
     )
     created = models.DateTimeField(default=timezone.now)
@@ -106,7 +105,7 @@ class BaseCourseInfo(models.Model):
 
     def save(self, *args, **kwargs):
         self.updated = timezone.now()
-        return super(CourseInfo, self).save(*args, **kwargs)
+        return super(BaseCourseInfo, self).save(*args, **kwargs)
 
 
 class ZeroGravityCourse(BaseCourseInfo):
@@ -198,7 +197,7 @@ class SRVCrossCourse(BaseCourseInfo):
         if not self.vehicle_type:
             self.vehicle_type = self.VEHICLE_SRV
 
-        return super(SRVRallyCourse, self).save(*args, **kwargs)
+        return super(SRVCrossCourse, self).save(*args, **kwargs)
 
 
 class StadiumCourse(BaseCourseInfo):
@@ -212,9 +211,9 @@ class StadiumCourse(BaseCourseInfo):
 
     def save(self, *args, **kwargs):
         if not self.vehicle_type:
-            self.vehicle_type = self.VEHICLE_SRV
+            self.vehicle_type = self.VEHICLE_SHIP
 
-        return super(SRVRallyCourse, self).save(*args, **kwargs)
+        return super(StadiumCourse, self).save(*args, **kwargs)
 
 
 class CourseScreenshot(models.Model):

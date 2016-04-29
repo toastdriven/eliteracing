@@ -110,13 +110,10 @@ class CourseResource(DjangoResource):
         order = self._get_order()
 
         if start is not None:
-            if order == 'desc':
-                qs = qs.filter(pk__lte=start)
-            else:
-                qs = qs.filter(pk__gte=start)
+            qs = qs.filter(pk__gte=start)
 
         # Apply ordering just before slicing.
-        qs = qs.order_by('created')
+        qs = qs.order_by(order)
         
         # Slice it down to a page-worth.
         limit = self._get_limit()
@@ -136,6 +133,9 @@ class CourseResource(DjangoResource):
             'courses': data,
         }
 
+    def make_timestamp(self, dt):
+        return int((time.mktime(dt.timetuple()) * 1000) + dt.microsecond)
+
     def prepare(self, data):
         prepped = {
             "id": data.pk,
@@ -149,7 +149,7 @@ class CourseResource(DjangoResource):
             "screenshots": [],
             "created_by": data.created_by.name,
             # The timestamp in milliseconds
-            "created": time.mktime(data.created.timetuple()) * 1000,
+            "created": self.make_timestamp(data.created),
             "url": data.get_absolute_url(),
         }
 

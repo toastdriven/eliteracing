@@ -24,10 +24,10 @@
   * List
   * Detail
 
-* News tests
-* Pages tests
-* Courses tests
-* API tests
+* (DONE) News tests
+* (DONE) Pages tests
+* (DONE) Courses tests
+* (DONE) API tests
 * Fix the broken/missing data as much as possible
 * Collect screenshots
 * Get uploading to S3 working (for local & prod)
@@ -51,8 +51,8 @@
 # TODO Launch
 
 * Check the DNS
-* Get settings configured for Heroku
-* Set the ENV vars in the Heroku admin
+* (DONE) Get settings configured for Heroku
+* (DONE) Set the ENV vars in the Heroku admin
 * Get Heroku going & working
 * Migrate the DB on Heroku
 * Create a superuser for myself, Coconut_head_ & FatHaggard

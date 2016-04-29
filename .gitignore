@@ -3,3 +3,5 @@
 env
 /static
 simulate_heroku_env.sh
+.coverage
+htmlcov

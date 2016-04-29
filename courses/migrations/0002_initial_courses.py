@@ -21,7 +21,6 @@ def create_course(Commander, Course, data):
             'distance_from_sol': data['distance_from_sol'],
             'notes': data['notes'],
             'created_by': cmdr,
-            'is_approved': data['is_approved'],
         }
     )
     return course

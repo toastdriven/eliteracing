@@ -5,3 +5,4 @@ restless==2.0.1
 markdown==2.6.6
 dj_database_url==0.4.1
 whitenoise==3.0
+pytz==2016.4
