@@ -3,15 +3,46 @@
   padding: 0;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
-  font-family: Georgia, serif;
+  font-family: Helvetica, sans-serif;
+  font-size: 16px;
+  font-size: 1.6rem;
 }
 
 img {
   border-width: 0;
 }
 
-ul li, ol li, dl dt, dl dd {
-  margin-left: 20px;
+a:hover,
+a:visited {
+  color: #0000ff;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 20px;
+  margin-bottom: 2.0rem;
+}
+
+p, blockquote {
+  margin-bottom: 20px;
+  margin-bottom: 2.0rem;
+}
+
+ul, ol, dl {
+  margin: 10px 0;
+  margin: 1.0rem 0;
+}
+
+ul li, ol li, dl dt, dl dd {
+  margin-left: 20px;
+  margin-left: 2.0rem;
+}
+
+hr {
+  margin: 10px 0;
+  margin: 1.0rem 0;
+}
