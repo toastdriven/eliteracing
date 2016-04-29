@@ -14,7 +14,8 @@
             "length": 12
         },
         "screenshots": [],
-        "created_by": "Coconut_Head_"
+        "created_by": "Coconut_Head_",
+        "is_approved": true
     },
     {
         "title": "Blackman Classic",
@@ -31,7 +32,8 @@
             "length": 12
         },
         "screenshots": [],
-        "created_by": "FatHaggard"
+        "created_by": "FatHaggard",
+        "is_approved": true
     },
     {
         "title": "Okinura Classic",
@@ -48,6 +50,7 @@
             "length": 13
         },
         "screenshots": [],
-        "created_by": "Coconut_Head_"
+        "created_by": "Coconut_Head_",
+        "is_approved": true
     }
 ]

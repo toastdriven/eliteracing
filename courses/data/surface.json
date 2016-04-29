@@ -14,7 +14,8 @@
             "gravity": "0.1"
         },
         "screenshots": [],
-        "created_by": "DJ Kreeze"
+        "created_by": "DJ Kreeze",
+        "is_approved": true
     },
     {
         "title": "HIP 18187 Classic",
@@ -31,7 +32,8 @@
             "gravity": "0.04"
         },
         "screenshots": [],
-        "created_by": "Edgar Starwalker"
+        "created_by": "Edgar Starwalker",
+        "is_approved": true
     },
     {
         "title": "Inovik Classic",
@@ -48,7 +50,8 @@
             "gravity": "0.0"
         },
         "screenshots": [],
-        "created_by": "FatHaggard"
+        "created_by": "FatHaggard",
+        "is_approved": true
     },
     {
         "title": "Skiraragea Classic",
@@ -65,7 +68,8 @@
             "gravity": "0.04"
         },
         "screenshots": [],
-        "created_by": "ELRinley"
+        "created_by": "ELRinley",
+        "is_approved": true
     },
     {
         "title": "Delkar Classic",
@@ -82,7 +86,8 @@
             "gravity": "0.05"
         },
         "screenshots": [],
-        "created_by": "coragem_BR"
+        "created_by": "coragem_BR",
+        "is_approved": true
     },
     {
         "title": "Lidals Classic",
@@ -99,6 +104,7 @@
             "gravity": "0.0"
         },
         "screenshots": [],
-        "created_by": "Joope_"
+        "created_by": "Joope_",
+        "is_approved": true
     }
 ]

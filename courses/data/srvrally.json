@@ -19,7 +19,8 @@
             "planet_type": "rock"
         },
         "screenshots": [],
-        "created_by": "FatHaggard"
+        "created_by": "FatHaggard",
+        "is_approved": true
     },
     {
         "title": "Napier-Sommerfeld Rally",
@@ -41,7 +42,8 @@
             "planet_type": "rock"
         },
         "screenshots": [],
-        "created_by": "Coconut_Head_"
+        "created_by": "Coconut_Head_",
+        "is_approved": true
     },
     {
         "title": "Plutarch Rally",
@@ -63,7 +65,8 @@
             "planet_type": "rock"
         },
         "screenshots": [],
-        "created_by": "FatHaggard"
+        "created_by": "FatHaggard",
+        "is_approved": true
     },
     {
         "title": "Ninsun Sprint",
@@ -85,7 +88,8 @@
             "planet_type": "ice"
         },
         "screenshots": [],
-        "created_by": "Coconut_Head_"
+        "created_by": "Coconut_Head_",
+        "is_approved": true
     },
     {
         "title": "Belarsuk Rally",
@@ -107,7 +111,8 @@
             "planet_type": "ice"
         },
         "screenshots": [],
-        "created_by": "FatHaggard"
+        "created_by": "FatHaggard",
+        "is_approved": true
     },
     {
         "title": "Naraka Hill Climb",
@@ -129,7 +134,8 @@
             "planet_type": "rock"
         },
         "screenshots": [],
-        "created_by": "Coconut_Head_"
+        "created_by": "Coconut_Head_",
+        "is_approved": true
     },
     {
         "title": "Arietis",
@@ -151,7 +157,8 @@
             "planet_type": "ice"
         },
         "screenshots": [],
-        "created_by": "FatHaggard"
+        "created_by": "FatHaggard",
+        "is_approved": true
     },
     {
         "title": "Skinfaxi Crater",
@@ -173,6 +180,7 @@
             "planet_type": "ice"
         },
         "screenshots": [],
-        "created_by": "Coconut_Head_"
+        "created_by": "Coconut_Head_",
+        "is_approved": true
     }
 ]

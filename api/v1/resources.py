@@ -17,7 +17,7 @@ class CourseResource(DjangoResource):
                 'GET': 'random_course',
             }
         })
-        self.base_qs = Course.objects.all()
+        self.base_qs = Course.approved.all()
 
     def _get_start(self):
         if not 'start' in self.request.GET:

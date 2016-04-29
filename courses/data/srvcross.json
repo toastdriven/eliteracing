@@ -15,7 +15,8 @@
             "tidally_locked": false
         },
         "screenshots": [],
-        "created_by": "Coconut_Head_"
+        "created_by": "Coconut_Head_",
+        "is_approved": true
     },
     {
         "title": "Ross 671 Cross",
@@ -33,7 +34,8 @@
             "tidally_locked": false
         },
         "screenshots": [],
-        "created_by": "FatHaggard"
+        "created_by": "FatHaggard",
+        "is_approved": true
     },
     {
         "title": "Okinura 8 Cross",
@@ -51,7 +53,8 @@
             "tidally_locked": true
         },
         "screenshots": [],
-        "created_by": "FatHaggard"
+        "created_by": "FatHaggard",
+        "is_approved": true
     },
     {
         "title": "Okinura 4 Cross",
@@ -69,7 +72,8 @@
             "tidally_locked": true
         },
         "screenshots": [],
-        "created_by": "FatHaggard"
+        "created_by": "FatHaggard",
+        "is_approved": true
     },
     {
         "title": "Ferguson Cross",
@@ -87,7 +91,8 @@
             "tidally_locked": true
         },
         "screenshots": [],
-        "created_by": "Buckyball"
+        "created_by": "Buckyball",
+        "is_approved": true
     },
     {
         "title": "Elwood Cross",
@@ -105,7 +110,8 @@
             "tidally_locked": true
         },
         "screenshots": [],
-        "created_by": "Buckyball"
+        "created_by": "Buckyball",
+        "is_approved": true
     },
     {
         "title": "Dunbar Cross",
@@ -123,6 +129,7 @@
             "tidally_locked": true
         },
         "screenshots": [],
-        "created_by": "FatHaggard"
+        "created_by": "FatHaggard",
+        "is_approved": true
     }
 ]

@@ -1,8 +1,16 @@
+from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 from django.db import models
 from django.utils import timezone
 
 from cmdrs.models import Commander
+
+
+class ApprovedCoursesManager(models.Manager):
+    def get_queryset(self):
+        return super(ApprovedCoursesManager, self).get_queryset().filter(
+            is_approved=True
+        )
 
 
 class Course(models.Model):
@@ -39,8 +47,13 @@ class Course(models.Model):
     )
     notes = models.TextField(blank=True, default='')
     created_by = models.ForeignKey(Commander)
+    is_approved = models.BooleanField(default=False)
+    approved_by = models.ForeignKey(User, null=True, blank=True)
     created = models.DateTimeField(default=timezone.now, db_index=True)
     updated = models.DateTimeField(default=timezone.now)
+
+    objects = models.Manager()
+    approved = ApprovedCoursesManager()
 
     class Meta:
         ordering = ('-created',)

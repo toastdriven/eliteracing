@@ -7,7 +7,7 @@ from .models import Course
 
 
 def list(request):
-    qs = Course.objects.all()
+    qs = Course.approved.all()
     course_types = [ct[0] for ct in Course.COURSE_TYPES]
 
     vehicle_type = request.GET.get('vehicle_type', 'all')
@@ -43,7 +43,7 @@ def list(request):
 
 
 def detail(request, id):
-    course = get_object_or_404(Course, pk=id)
+    course = get_object_or_404(Course.approved.all(), pk=id)
     return render(request, 'courses/detail.html', {
         'course': course,
     })
