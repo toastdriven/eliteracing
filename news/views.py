@@ -1,3 +1,5 @@
+import datetime
+
 from django.core.paginator import Paginator, EmptyPage
 from django.http import Http404
 from django.shortcuts import get_object_or_404, render
@@ -19,38 +21,47 @@ def latest_posts(request):
 
 
 def posts_by_year(request, year):
+    year = int(year)
     posts = NewsPost.objects.filter(
-        created__year=int(year)
+        created__year=year
     )
     return render(request, 'news/posts_by_year.html', {
         'posts': posts,
+        'date': datetime.date(year, 1, 1),
     })
 
 
-def posts_by_month(request, year, month, day):
+def posts_by_month(request, year, month):
+    year = int(year)
+    month = int(month)
     posts = NewsPost.objects.filter(
-        created__year=int(year),
-        created__month=int(month)
+        created__year=year,
+        created__month=month
     )
     return render(request, 'news/posts_by_month.html', {
         'posts': posts,
+        'date': datetime.date(year, month, 1),
     })
 
 
 def posts_by_day(request, year, month, day):
+    year = int(year)
+    month = int(month)
+    day = int(day)
     posts = NewsPost.objects.filter(
-        created__year=int(year),
-        created__month=int(month),
-        created__day=int(day),
+        created__year=year,
+        created__month=month,
+        created__day=day,
     )
     return render(request, 'news/posts_by_day.html', {
         'posts': posts,
+        'date': datetime.date(year, month, day),
     })
 
 
 def post_detail(request, year, month, day, slug):
     post = get_object_or_404(
-        Post,
+        NewsPost,
         created__year=int(year),
         created__month=int(month),
         created__day=int(day),

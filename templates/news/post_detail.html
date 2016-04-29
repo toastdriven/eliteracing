@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block page_title %}{{ block.super }}: {{ post.title }}{% endblock %}
+
+{% block breadcrumbs %}
+<ul class="breadcrumbs">
+  <li>
+    <a href="{% url 'home' %}">Home</a>
+  </li>
+  <li>
+    <a href="{% url 'news_latest' %}">News</a>
+  </li>
+  <li>
+    <a href="{% url 'news_by_year' year=post.created.year %}">{{ post.created|date:"Y" }}</a>
+  </li>
+  <li>
+    <a href="{% url 'news_by_month' year=post.created.year month=post.created|date:"m" %}">{{ post.created|date:"F" }}</a>
+  </li>
+  <li>
+    <a href="{% url 'news_by_day' year=post.created.year month=post.created|date:"m" day=post.created|date:"d" %}">{{ post.created|date:"j" }}</a>
+  </li>
+  <li>
+    {{ post.title|truncatewords:5 }}
+  </li>
+</ul>
+{% endblock %}
+
+{% block content %}
+<div class="news-post">
+  <h3>
+    <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+  </h3>
+
+  <div>
+    {{ post.content_html|safe }}
+  </div>
+
+  <div>
+    Posted on {{ post.created|date:"F j, Y" }} 
+    at {{ post.created|date:"g:i a" }} 
+    by {{ post.author.first_name }}.
+  </div>
+</div>
+{% endblock %}

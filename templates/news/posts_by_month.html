@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block page_title %}{{ block.super }}: News for {{ date|date:"F Y" }}{% endblock %}
+
+{% block breadcrumbs %}
+<ul class="breadcrumbs">
+  <li>
+    <a href="{% url 'home' %}">Home</a>
+  </li>
+  <li>
+    <a href="{% url 'news_latest' %}">News</a>
+  </li>
+  <li>
+    <a href="{% url 'news_by_year' year=date.year %}">{{ date|date:"Y" }}</a>
+  </li>
+  <li>
+    {{ date|date:"F" }}
+  </li>
+</ul>
+{% endblock %}
+
+{% block content %}
+<h2>News for {{ date|date:"F Y" }}</h2>
+
+{% for post in posts %}
+  {% include 'news/includes/small_post.html' %}
+{% endfor %}
+{% endblock %}

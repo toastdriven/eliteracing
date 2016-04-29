@@ -1,0 +1,15 @@
+<div class="news-post-small">
+  <h3>
+    <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+  </h3>
+
+  <div>
+    {{ post.content_html|safe|truncatewords_html:60 }}
+  </div>
+
+  <div>
+    Posted on {{ post.created|date:"F j, Y" }} 
+    at {{ post.created|date:"g:i a" }} 
+    by {{ post.author.first_name }}.
+  </div>
+</div>
