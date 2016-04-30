@@ -1,4 +1,5 @@
 {% load static from staticfiles %}
+{% load random_header from racing_tags %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,84 +13,103 @@
   {% endblock %}
 </head>
 <body>
-  <div id="page">
-    <header>
+  <header class="{% random_header %}">
+    <div class="constrain">
       {% block header %}
-        <h1>Elite Racing Federation</h1>
-      {% endblock %}
+        <div class="logo">
+          <h1>
+            <a href="{% url 'home' %}">
+            Elite Racing<br>
+            Federation
+            </a>
+          </h1>
+        </div>
 
-      <div>
-        <form method="GET" action="{# % url 'courses_search' % #}">
-          <input type="text" name="q" value="">
-          <button>Search</button>
-        </form>
-        <!--
-        <ul>
-          <li>
-            Login 
-          </li>
-          <li>
-            Sign-Up 
-          </li>
-        </ul>
-        -->
-        <nav>
+        <div class="links">
+          <div class="search-form">
+            <form method="GET" action="{# % url 'courses_search' % #}">
+              <input type="text" name="q" value="">
+              <button>Find Courses</button>
+            </form>
+          </div>
+
+          <!--
           <ul>
             <li>
-              <a href="{% url 'courses_list' %}">Courses</a>
+              Login
             </li>
             <li>
-              <a href="{% url 'pages_show_page' slug='builds' %}">Builds</a>
-            </li>
-            <li>
-              <a href="{% url 'pages_show_page' slug='erf' %}">ERF</a>
-            </li>
-            <li>
-              <a href="{% url 'pages_show_page' slug='hosting' %}">Hosting A Race</a>
-            </li>
-            <li>
-              <a href="{% url 'docs_api_v1_courses' %}">API</a>
-            </li>
-            <li>
-              <a href="{% url 'news_latest' %}">News</a>
-            </li>
-            <li>
-              <a href="{% url 'pages_show_page' slug='about' %}">About</a>
+              Sign-Up
             </li>
           </ul>
-        </nav>
-      </div>
-    </header>
+          -->
+          <nav>
+            <ul>
+              <li>
+                <a href="{% url 'courses_list' %}">Courses</a>
+              </li>
+              <li>
+                <a href="{% url 'pages_show_page' slug='builds' %}">Builds</a>
+              </li>
+              <li>
+                <a href="{% url 'pages_show_page' slug='erf' %}">ERF</a>
+              </li>
+              <li>
+                <a href="{% url 'pages_show_page' slug='hosting' %}">Hosting A Race</a>
+              </li>
+              <li>
+                <a href="{% url 'docs_api_v1_courses' %}">API</a>
+              </li>
+              <li>
+                <a href="{% url 'news_latest' %}">News</a>
+              </li>
+              <li>
+                <a href="{% url 'pages_show_page' slug='about' %}">About</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      {% endblock %}
+    </div>
+  </header>
 
-    <content>
+  <content>
+    <div class="constrain">
     {% block breadcrumbs %}{% endblock %}
     {% block content %}
 
     {% endblock %}
-    </content>
+    </div>
+  </content>
 
-    <footer>
+  <footer>
+    <div class="constrain">
     {% block footer %}
-      <div>
-        Copyright {% now "Y" %} - Elite Racing Federation
+      <div class="section">
+        <div>
+          Copyright {% now "Y" %} - Elite Racing Federation
+        </div>
+        <div>
+          Elite: Dangerous and all associated media are the intellectual property
+          of <a href="http://www.frontier.co.uk/">Frontier Developments.</a>
+        </div>
       </div>
-      <div>
-        Code by CMDR Branch 
-        (<a href="http://toastdriven.com/"><img src="{% static "img/pixel_toast.png" %}"></a>
-        <a href="http://toastdriven.com/">Toast Driven</a>)
-      </div>
-      <div>
-        This site is open-source &amp; available on 
-        <a href="https://github.com/toastdriven/eliteracing">GitHub</a>.
-      </div>
-      <div>
-        Elite: Dangerous and all associated media are the intellectual property 
-        of <a href="http://www.frontier.co.uk/">Frontier Developments.</a>
+
+      <div class="section">
+        <div>
+          Code by CMDR Branch
+          (<a href="http://toastdriven.com/"><img src="{% static "img/pixel_toast.png" %}"></a>
+          <a href="http://toastdriven.com/">Toast Driven</a>)
+        </div>
+        <div>
+          This site is open-source &amp; available on
+          <a href="https://github.com/toastdriven/eliteracing">GitHub</a>.
+        </div>
       </div>
     {% endblock %}
-    </footer>  
-  </div>
-  
+    </div>
+  </footer>
+
   {% block js %}
 
     {% block extra_js %}

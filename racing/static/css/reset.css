@@ -23,6 +23,8 @@ a:visited {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  line-height: 38px;
+  line-height: 3.8rem;
   margin-bottom: 20px;
   margin-bottom: 2.0rem;
 }

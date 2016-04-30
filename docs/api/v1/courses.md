@@ -6,6 +6,7 @@ All requests/responses should be provided using JSON bodies.
 
 `GET` methods do not require authentication of any kind.
 
+-----
 
 ## `GET` List
 
@@ -24,12 +25,17 @@ date (newest courses first).
 * `system`: A string for searching based on system name (case-insensitive).
 * `vehicle_type`: A string for choosing vehicle type. Accepts `all`, `ship` or
     `srv` options. Default is `all`.
-* `course_type`: A string for choosing course type. Accepts `all`, 
+* `course_type`: A string for choosing course type. Accepts `all`,
     `zerogravity`, `surface`, `srvrally`, `srvcross` or `stadium` options.
     Default is `all`.
 * `created_by`: A CMDR name for who created the courses (case-insensitive).
 
-Format:
+### Example Request(s):
+
+    curl http://www.edracers.com/api/v1/courses/
+    curl http://www.edracers.com/api/v1/courses/?vehicle_type=srv&created_by=Coconut_Head_&limit=3&order=desc
+
+### Format:
 
     {
         "meta": {
@@ -96,6 +102,7 @@ Format:
         ]
     }
 
+-----
 
 ## `GET` Detail
 
@@ -107,7 +114,11 @@ A detail of a single course.
 
 * None
 
-Format:
+### Example Request(s):
+
+    curl http://www.edracers.com/api/v1/courses/1/
+
+### Format:
 
     {
         "id": <int>,
@@ -164,6 +175,7 @@ Format:
         "url": "<detail-url-on-elite-racing-site>"
     }
 
+-----
 
 ## `GET` Random Course Detail
 
@@ -175,7 +187,11 @@ A detail of a **RANDOM** single course.
 
 * None
 
-Format:
+### Example Request(s):
+
+    curl http://www.edracers.com/api/v1/courses/random/
+
+### Format:
 
     {
         "id": <int>,
