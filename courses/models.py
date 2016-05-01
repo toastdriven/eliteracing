@@ -235,7 +235,11 @@ class CourseScreenshot(models.Model):
         ordering = ("created", "is_primary")
 
     def __unicode__(self):
-        return u"{} for {}".format(self.shot.get_filename(), self.course.title)
+        return u"{} ({}) for {}".format(
+            'Primary shot' if self.is_primary else 'Shot',
+            'annotated' if self.is_annotated else 'not annotated',
+            self.course.title
+        )
 
     def save(self, *args, **kwargs):
         self.updated = timezone.now()
