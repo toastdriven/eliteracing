@@ -244,3 +244,10 @@ class CourseScreenshot(models.Model):
     def save(self, *args, **kwargs):
         self.updated = timezone.now()
         return super(CourseScreenshot, self).save(*args, **kwargs)
+
+
+# For thumbnail generation
+from easy_thumbnails.signals import saved_file
+from easy_thumbnails.signal_handlers import generate_aliases_global
+
+saved_file.connect(generate_aliases_global)
