@@ -1,3 +1,4 @@
+{% load thumbnail %}
 <div class="small-course">
   <div class="course-info">
     <h3>
@@ -22,9 +23,8 @@
   </div>
 
   <div class="screenshot">
-    <img src="http://placehold.it/90x90">
     {% if course.screenshots.count %}
-      <img src="{{ course.screenshots.all.0.shot.url }}">
+      <img src="{{ course.screenshots.all.0.shot|thumbnail_url:'list_thumbnail' }}">
     {% endif %}
   </div>
 </div>
