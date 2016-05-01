@@ -28,16 +28,16 @@
 * (DONE) Pages tests
 * (DONE) Courses tests
 * (DONE) API tests
+* (DONE) More header shots
+* (DONE) README for setup/testing/contributions
+* (DONE) Push the code to GitHub (w/ LICENSE)
 * Fix the broken/missing data as much as possible
 * Collect screenshots
 * Get uploading to S3 working (for local & prod)
 * Integrate django-thumbnailer (or similar?)
 * Finish HTML/CSS design
-* More header shots
 * Add in all the original zero gravity series courses
 * Add About/Links view
-* README for setup/testing/contributions
-* (DONE) Push the code to GitHub (w/ LICENSE)
 
 
 # TODO Maybe Pre-launch
@@ -50,14 +50,16 @@
 
 # TODO Launch
 
-* Check the DNS
+* (DONE) Check the DNS
 * (DONE) Get settings configured for Heroku
 * (DONE) Set the ENV vars in the Heroku admin
-* Get Heroku going & working
-* Migrate the DB on Heroku
-* Create a superuser for myself, Coconut_head_ & FatHaggard
+* (DONE) Get Heroku going & working
+* (DONE) Migrate the DB on Heroku
+* (DONE) Create a superuser for myself
+* (DONE) Create the announcement
+* Create a superuser for Coconut_head_
+* Create a superuser for FatHaggard
 * Get SES working for error notifications
-* Create the announcement
 
 * Investigate SSL cert?
 
