@@ -17,6 +17,7 @@
 {% endblock %}
 
 {% block content %}
+{% load thumbnail %}
 <div class="course-detail">
   <h2>
     <a href="{{ course.get_absolute_url }}">{{ course.title }}</a>
@@ -73,8 +74,19 @@
   </div>
 
   <div class="screenshots">
+    {% comment %}
+    <!-- Someday maybe, if we want to feature the primary as the bigger one & the rest smaller underneath... -->
+    {% if course.screenshots.all|length > 0 %}
+      <div class="primary-shot">
+        <a href="{{ screenshot.shot.url }}">
+        <img src="{{ screenshot.shot|thumbnail_url:'primary_thumbnail' }}"></a>
+      </div>
+    {% endif %}
+    {% endcomment %}
+
     {% for screenshot in course.screenshots.all %}
-      <img src="{{ screenshot.shot.url }}">
+      <a href="{{ screenshot.shot.url }}">
+      <img src="{{ screenshot.shot|thumbnail_url:'primary_thumbnail' }}"></a>
     {% endfor %}
   </div>
 </div>
