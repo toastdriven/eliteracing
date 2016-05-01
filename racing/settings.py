@@ -41,6 +41,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'easy_thumbnails',
+    'storages',
+
     'cmdrs',
     'courses',
     'news',
@@ -132,3 +136,29 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+
+# Storages settings
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
+AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
+AWS_STORAGE_BUCKET_NAME = 'eliteracing'
+AWS_HEADERS = {
+    'Expires': 'Thu, 31 Apr 2020 23:23:59 GMT',
+    'Cache-Control': 'max-age=86400',
+}
+
+
+# Easy Thambnails settings
+THUMBNAIL_ALIASES = {
+    'courses.CourseScreenshot.shot': {
+        'list_thumbnail': {
+            'size': (90, 90),
+            'crop': 'smart',
+        },
+        'primary_thumbnail': {
+            'size': (288, 180),
+            'crop': 'smart',
+        },
+    },
+}
