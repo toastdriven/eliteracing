@@ -28,9 +28,21 @@
       <li>
         <strong>Type:</strong> {{ course.get_course_type_display }}
       </li>
-      <li>
-        <strong>System:</strong> {{ course.system }}
-      </li>
+      {% if course.zerogravitycourse %}
+        {% include "courses/includes/zerogravity.html" %}
+      {% endif %}
+      {% if course.surfacecourse %}
+        {% include "courses/includes/surface.html" %}
+      {% endif %}
+      {% if course.srvrallycourse %}
+        {% include "courses/includes/srvrally.html" %}
+      {% endif %}
+      {% if course.srvcrosscourse %}
+        {% include "courses/includes/srvcross.html" %}
+      {% endif %}
+      {% if course.stadiumcourse %}
+        {% include "courses/includes/stadium.html" %}
+      {% endif %}
       <li>
         <strong>Nearby Outfitting:</strong> {{ course.nearby_outfitting }}
       </li>
@@ -45,26 +57,6 @@
         on {{ course.created|date:"F j, Y" }}
       </li>
     </ul>
-
-    <hr>
-
-    <h3>Course Specifics</h3>
-
-    {% if course.zerogravitycourse %}
-      {% include "courses/includes/zerogravity.html" %}
-    {% endif %}
-    {% if course.surfacecourse %}
-      {% include "courses/includes/surface.html" %}
-    {% endif %}
-    {% if course.srvrallycourse %}
-      {% include "courses/includes/srvrally.html" %}
-    {% endif %}
-    {% if course.srvcrosscourse %}
-      {% include "courses/includes/srvcross.html" %}
-    {% endif %}
-    {% if course.stadiumcourse %}
-      {% include "courses/includes/stadium.html" %}
-    {% endif %}
 
     <hr>
 

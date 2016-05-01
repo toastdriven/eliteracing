@@ -330,6 +330,14 @@ button:active {
   flex: 1;
 }
 
+.course-detail ul {
+  list-style: none;
+}
+
+.course-detail ul li {
+  margin-left: 0;
+}
+
 .content-columns .sidebar.course-screenshots {
   /* border-left: solid 1px #bbbbbb; */
   flex: 0 0 480px;
