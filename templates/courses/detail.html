@@ -18,62 +18,68 @@
 
 {% block content %}
 {% load thumbnail %}
-<div class="course-detail">
-  <h2>
-    <a href="{{ course.get_absolute_url }}">{{ course.title }}</a>
-  </h2>
+<div class="content-columns">
+  <div class="course-detail">
+    <h2>
+      <a href="{{ course.get_absolute_url }}">{{ course.title }}</a>
+    </h2>
 
-  <ul class="characteristics">
-    <li>
-      <strong>Type:</strong> {{ course.get_course_type_display }}
-    </li>
-    <li>
-      <strong>System:</strong> {{ course.system }}
-    </li>
-    <li>
-      <strong>Nearby Outfitting:</strong> {{ course.nearby_outfitting }}
-    </li>
-    <li>
-      <strong>Distance From Primary:</strong> {{ course.distance_from_primary }} Ls
-    </li>
-    <li>
-      <strong>Distance From Sol:</strong> {{ course.distance_from_sol }} Ly
-    </li>
-    <li>
-      <strong>Created By:</strong> {{ course.created_by.name }}
-      on {{ course.created|date:"F j, Y" }}
-    </li>
-  </ul>
+    <ul class="characteristics">
+      <li>
+        <strong>Type:</strong> {{ course.get_course_type_display }}
+      </li>
+      <li>
+        <strong>System:</strong> {{ course.system }}
+      </li>
+      <li>
+        <strong>Nearby Outfitting:</strong> {{ course.nearby_outfitting }}
+      </li>
+      <li>
+        <strong>Distance From Primary:</strong> {{ course.distance_from_primary }} Ls
+      </li>
+      <li>
+        <strong>Distance From Sol:</strong> {{ course.distance_from_sol }} Ly
+      </li>
+      <li>
+        <strong>Created By:</strong> {{ course.created_by.name }}
+        on {{ course.created|date:"F j, Y" }}
+      </li>
+    </ul>
 
-  <h3>Course Specifics</h3>
+    <hr>
 
-  {% if course.zerogravitycourse %}
-    {% include "courses/includes/zerogravity.html" %}
-  {% endif %}
-  {% if course.surfacecourse %}
-    {% include "courses/includes/surface.html" %}
-  {% endif %}
-  {% if course.srvrallycourse %}
-    {% include "courses/includes/srvrally.html" %}
-  {% endif %}
-  {% if course.srvcrosscourse %}
-    {% include "courses/includes/srvcross.html" %}
-  {% endif %}
-  {% if course.stadiumcourse %}
-    {% include "courses/includes/stadium.html" %}
-  {% endif %}
+    <h3>Course Specifics</h3>
 
-  <h3>Notes:</h3>
-
-  <div class="notes">
-    {% if course.notes %}
-      {{ course.notes|linebreaksbr }}
-    {% else %}
-      None
+    {% if course.zerogravitycourse %}
+      {% include "courses/includes/zerogravity.html" %}
     {% endif %}
+    {% if course.surfacecourse %}
+      {% include "courses/includes/surface.html" %}
+    {% endif %}
+    {% if course.srvrallycourse %}
+      {% include "courses/includes/srvrally.html" %}
+    {% endif %}
+    {% if course.srvcrosscourse %}
+      {% include "courses/includes/srvcross.html" %}
+    {% endif %}
+    {% if course.stadiumcourse %}
+      {% include "courses/includes/stadium.html" %}
+    {% endif %}
+
+    <hr>
+
+    <h3>Notes:</h3>
+
+    <div class="notes">
+      {% if course.notes %}
+        {{ course.notes|linebreaksbr }}
+      {% else %}
+        None
+      {% endif %}
+    </div>
   </div>
 
-  <div class="screenshots">
+  <div class="sidebar course-screenshots">
     {% comment %}
     <!-- Someday maybe, if we want to feature the primary as the bigger one & the rest smaller underneath... -->
     {% if course.screenshots.all|length > 0 %}

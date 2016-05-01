@@ -326,6 +326,20 @@ button:active {
   margin-left: 0;
 }
 
+.content-columns .course-detail {
+  flex: 1;
+}
+
+.content-columns .sidebar.course-screenshots {
+  /* border-left: solid 1px #bbbbbb; */
+  flex: 0 0 480px;
+  flex: 0 0 48.0rem;
+  margin-top: 36px;
+  margin-top: 3.6rem;
+  margin-left: 10px;
+  margin-left: 1.0rem;
+}
+
 .latest-news {
   background-color: #eeeeee;
   border: solid 1px #666666;

@@ -153,11 +153,11 @@ AWS_HEADERS = {
 THUMBNAIL_ALIASES = {
     'courses.CourseScreenshot.shot': {
         'list_thumbnail': {
-            'size': (90, 90),
+            'size': (130, 130),
             'crop': 'smart',
         },
         'primary_thumbnail': {
-            'size': (288, 180),
+            'size': (480, 270),
             'crop': 'smart',
         },
     },
