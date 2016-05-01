@@ -31,13 +31,13 @@
 * (DONE) More header shots
 * (DONE) README for setup/testing/contributions
 * (DONE) Push the code to GitHub (w/ LICENSE)
-* Fix the broken/missing data as much as possible
-* Collect screenshots
-* Get uploading to S3 working (for local & prod)
-* Integrate django-thumbnailer (or similar?)
+* (DONE) Collect screenshots
+* (DONE) Get uploading to S3 working (for local & prod)
+* (DONE) Integrate django-thumbnailer (or similar?)
 * Finish HTML/CSS design
 * Add in all the original zero gravity series courses
 * Add About/Links view
+* Fix the broken/missing data as much as possible
 
 
 # TODO Maybe Pre-launch

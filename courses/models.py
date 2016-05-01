@@ -216,9 +216,13 @@ class StadiumCourse(BaseCourseInfo):
         return super(StadiumCourse, self).save(*args, **kwargs)
 
 
+def screenshot_location(instance, filename):
+    return 'coursescreenshots/{}/{}'.format(instance.course.pk, filename)
+
+
 class CourseScreenshot(models.Model):
     course = models.ForeignKey(Course, related_name="screenshots")
-    shot = models.ImageField(max_length=255)
+    shot = models.ImageField(max_length=255, upload_to=screenshot_location)
     is_primary = models.BooleanField(
         default=False,
         help_text="Is this the main/best image the user should see?",
