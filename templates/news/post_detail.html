@@ -27,18 +27,18 @@
 
 {% block content %}
 <div class="news-post">
-  <h3>
+  <h2>
     <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
-  </h3>
+  </h2>
 
-  <div>
-    {{ post.content_html|safe }}
+  <div class="tagline">
+    By CMDR {{ post.author.commanders.first.name }}
+    on {{ post.created|date:"F j, Y" }}
+    at {{ post.created|date:"g:i a" }}
   </div>
 
   <div>
-    Posted on {{ post.created|date:"F j, Y" }} 
-    at {{ post.created|date:"g:i a" }} 
-    by {{ post.author.first_name }}.
+    {{ post.content_html|safe }}
   </div>
 </div>
 {% endblock %}

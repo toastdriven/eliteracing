@@ -41,7 +41,7 @@
             <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
           </h4>
 
-          <span class="tagline">By CMDR {{ post.author.commanders.first.name }} {{ post.created|timesince }} ago</span>
+          <div class="tagline">By CMDR {{ post.author.commanders.first.name }} - {{ post.created|timesince }} ago</div>
 
           <div>
             {{ post.content_html|safe|truncatewords_html:50 }}

@@ -291,7 +291,7 @@ button:active {
   margin-left: 1.0rem;
 }
 
-.small-course {
+div.small-course {
   border-bottom: solid 1px #bbbbbb;
   display: flex;
   align-items: center;
@@ -300,8 +300,12 @@ button:active {
   padding: 1.0rem 0 1.0rem 0;
 }
 
-.small-course:last-child {
+div.small-course:last-child {
   border-bottom: none;
+}
+
+div.small-course:nth-child(even) {
+  background-color: #eeeeee;
 }
 
 .small-course .course-info {
@@ -367,7 +371,7 @@ button:active {
   line-height: 2.4rem;
 }
 
-.latest-news .tagline {
+.tagline {
   color: #666666;
   font-size: 13px;
   font-size: 1.3rem;
@@ -381,4 +385,32 @@ button:active {
 .pagination .current,
 .pagination .next {
   margin: 5px;
+}
+
+.news-post-small {
+  border-bottom: solid 1px #bbbbbb;
+  margin-bottom: 20px;
+  margin-bottom: 2.0rem;
+  padding: 20px 0 20px 0;
+  padding: 2.0rem 0 2.0rem 0;
+}
+
+.news-post-small:last-child {
+  border-bottom: none;
+}
+
+.news-post-small h3 {
+  margin-bottom: 0;
+  line-height: 24px;
+  line-height: 2.4rem;
+}
+
+.news-post-small .tagline,
+.news-post .tagline {
+  margin-bottom: 16px;
+  margin-bottom: 1.6rem;
+}
+
+.news-post h2 {
+  margin-bottom: 0;
 }
