@@ -1,22 +1,24 @@
 <div class="small-course">
-  <h3>
-    <a href="{{ course.get_absolute_url }}">{{ course.title }}</a>
-  </h3>
+  <div class="course-info">
+    <h3>
+      <a href="{{ course.get_absolute_url }}">{{ course.title }}</a>
+    </h3>
 
-  <ul class="characteristics">
-    <li>
-      <strong>Type:</strong> {{ course.get_course_type_display }}
-    </li>
-    <li>
-      <strong>System:</strong> {{ course.system }}
-    </li>
-    <li>
-      <strong>Created By:</strong> {{ course.created_by.name }}
-    </li>
-  </ul>
+    <ul class="characteristics">
+      <li>
+        <strong>Type:</strong> {{ course.get_course_type_display }}
+      </li>
+      <li>
+        <strong>System:</strong> {{ course.system }}
+      </li>
+      <li>
+        <strong>Created By:</strong> {{ course.created_by.name }}
+      </li>
+    </ul>
 
-  <div class="notes">
-    {{ course.notes|linebreaksbr }}
+    <div class="notes">
+      {{ course.notes|linebreaksbr }}
+    </div>
   </div>
 
   <div class="screenshot">

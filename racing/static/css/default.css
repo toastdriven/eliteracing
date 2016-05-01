@@ -254,3 +254,109 @@ button {
   padding: 1.0rem;
   text-shadow: rgba(1, 1, 1, 0.75) 2px 2px 3px;
 }
+
+button:active {
+  background-color: #aa0000;
+  color: #eeeeee;
+}
+
+.content-columns {
+  display: flex;
+}
+
+.content-columns .sidebar {
+  padding: 10px 0 10px 0;
+  padding: 0 1.0rem 0 1.0rem;
+}
+
+.content-columns .sidebar.filters {
+  border-right: solid 1px #bbbbbb;
+  flex: 0 0 180px;
+  flex: 0 0 18.0rem;
+  margin-right: 10px;
+  margin-right: 1.0rem;
+}
+
+.content-columns .sidebar.news {
+  border-left: solid 1px #bbbbbb;
+  flex: 0 0 400px;
+  flex: 0 0 40.0rem;
+  margin-left: 10px;
+  margin-left: 1.0rem;
+}
+
+.course-list {
+  flex: 1;
+  margin-left: 10px;
+  margin-left: 1.0rem;
+}
+
+.small-course {
+  border-bottom: solid 1px #bbbbbb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0 10px 0;
+  padding: 1.0rem 0 1.0rem 0;
+}
+
+.small-course:last-child {
+  border-bottom: none;
+}
+
+.small-course .course-info {
+  flex: 3;
+}
+
+.small-course .screenshot {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  align-items: center;
+  min-width: 90px;
+  min-width: 9.0rem;
+}
+
+.filters ul {
+  list-style: none;
+}
+
+.filters ul li,
+.filters ol li {
+  margin-left: 0;
+}
+
+.latest-news {
+  background-color: #eeeeee;
+  border: solid 1px #666666;
+  border-radius: 6px;
+  padding: 10px;
+  padding: 1.0rem;
+}
+
+.latest-news h3 {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.latest-news h4 {
+  margin-bottom: 0;
+  line-height: 24px;
+  line-height: 2.4rem;
+}
+
+.latest-news .tagline {
+  color: #666666;
+  font-size: 13px;
+  font-size: 1.3rem;
+}
+
+.pagination {
+  display: flex;
+}
+
+.pagination .previous,
+.pagination .current,
+.pagination .next {
+  margin: 5px;
+}

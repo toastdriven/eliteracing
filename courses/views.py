@@ -48,6 +48,7 @@ def list(request):
         'page': page,
         'vehicle_type': vehicle_type,
         'course_type': course_type,
+        'search': search,
     })
 
 
