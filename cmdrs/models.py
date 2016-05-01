@@ -7,7 +7,7 @@ from django.utils import timezone
 
 
 class Commander(models.Model):
-    user = models.ForeignKey(User, null=True, blank=True)
+    user = models.ForeignKey(User, related_name='commanders', null=True, blank=True)
     name = models.CharField(max_length=255, unique=True, db_index=True)
     api_token = models.CharField(max_length=64, blank=True, db_index=True)
     created = models.DateTimeField(default=timezone.now, db_index=True)

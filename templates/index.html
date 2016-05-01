@@ -3,20 +3,63 @@
 {% block page_title %}{{ block.super }}: Home{% endblock %}
 
 {% block content %}
+{% load get_latest_posts from news_tags %}
 <h2>Welcome to the Elite Racing Federation!</h2>
 
-<p>
-  The Elite Racing Federation was created in April 3302 as a response to the 
-  overwhelming growth of underground racing in the galaxy. As an organization, 
-  the ERF has sworn political neutrality while members are free to align as 
-  they please. Nonetheless, the ERF headquarters on Okinura 6 sits in the heart 
-  of the Federation where the underground racing scene began. There are no laws 
-  against racing vessels or events but Elite Racing is dangerous and since 
-  reaching popularity in February 3301, hundreds of millions of credits have 
-  been claimed in insurance and station repair. As a result, a small group of 
-  experienced commanders formed a council to bring regulation and coordination 
-  to the racing scene. The Elite Racing Federation provides public resources to 
-  ensure that members of the racing community can run events in their local 
-  sectors and spread the love of racing through the galaxy.
-</p>
+<div id="home-content">
+  <p>
+    The Elite Racing Federation was created in April 3302 as a response to the
+    overwhelming growth of underground racing in the galaxy. As an organization,
+    the ERF has sworn political neutrality while members are free to align as
+    they please. Nonetheless, the ERF headquarters on Okinura 6 sits in the heart
+    of the Federation where the underground racing scene began. There are no laws
+    against racing vessels or events but Elite Racing is dangerous and since
+    reaching popularity in February 3301, hundreds of millions of credits have
+    been claimed in insurance and station repair. As a result, a small group of
+    experienced commanders formed a council to bring regulation and coordination
+    to the racing scene. The Elite Racing Federation provides public resources to
+    ensure that members of the racing community can run events in their local
+    sectors and spread the love of racing through the galaxy.
+  </p>
+</div>
+
+<div class="sidebar">
+  <div id="random-course"></div>
+
+  <div class="latest-news">
+    <h3>
+      <a href="{% url 'news_latest' %}">Latest News</a>
+    </h3>
+
+    {% get_latest_posts limit=5 as posts %}
+
+    {% if posts %}
+      {% with posts.0 as post %}
+      <div class="most-recent">
+        <h4>
+          <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+        </h4>
+
+        <span>By CMDR {{ post.author.commanders.first.name }} {{ post.created|timesince }} ago</span>
+
+        <div>
+          {{ post.content_html|safe|truncatewords_html:50 }}
+        </div>
+      </div>
+      {% endwith %}
+
+      {% if posts|length > 1 %}
+      <ul>
+        {% for post in posts|slice:"1:" %}
+          <li>
+            <a href="{{ post.get_absolute_url }}">{{ post.title }}</a> - {{ post.created|timesince }} ago
+          </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    {% else %}
+      <p>No news is good news?</p>
+    {% endif %}
+  </div>
+</div>
 {% endblock %}
