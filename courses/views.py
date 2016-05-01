@@ -10,8 +10,17 @@ def list(request):
     qs = Course.approved.all()
     course_types = [ct[0] for ct in Course.COURSE_TYPES]
 
+    search = request.GET.get('q', None)
     vehicle_type = request.GET.get('vehicle_type', 'all')
     course_type = request.GET.get('course_type', 'all')
+
+    if search:
+        qs = qs.filter(
+            Q(title__icontains=search) |
+            Q(system__icontains=search) |
+            Q(notes__icontains=search) |
+            Q(created_by__name__icontains=search)
+        )
 
     if vehicle_type == 'ship':
         qs = qs.filter(

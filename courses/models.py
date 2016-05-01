@@ -30,19 +30,19 @@ class Course(models.Model):
     title = models.CharField(max_length=255)
     system = models.CharField(max_length=255, db_index=True)
     course_type = models.CharField(
-        max_length=16, 
+        max_length=16,
         choices=COURSE_TYPES,
         db_index=True
     )
     nearby_outfitting = models.CharField(max_length=128, blank=True, default='')
     distance_from_primary = models.DecimalField(
-        max_digits=8, 
-        decimal_places=2, 
+        max_digits=8,
+        decimal_places=2,
         default='0.0'
     )
     distance_from_sol = models.DecimalField(
-        max_digits=8, 
-        decimal_places=2, 
+        max_digits=8,
+        decimal_places=2,
         default='0.0'
     )
     notes = models.TextField(blank=True, default='')
@@ -60,8 +60,8 @@ class Course(models.Model):
 
     def __unicode__(self):
         return u"{} ({}) in {}".format(
-            self.title, 
-            self.course_type, 
+            self.title,
+            self.course_type,
             self.system
         )
 
@@ -88,9 +88,9 @@ class BaseCourseInfo(models.Model):
 
     course = models.OneToOneField(Course)
     vehicle_type = models.CharField(
-        max_length=8, 
+        max_length=8,
         blank=True,
-        choices=VEHICLE_TYPES, 
+        choices=VEHICLE_TYPES,
         db_index=True
     )
     created = models.DateTimeField(default=timezone.now)
@@ -170,9 +170,9 @@ class SRVRallyCourse(BaseCourseInfo):
     finish_line = models.CharField(max_length=255, blank=True, default='')
     gravity = models.DecimalField(max_digits=5, decimal_places=2, default='1.0')
     planet_type = models.CharField(
-        max_length=32, 
-        choices=PLANET_TYPES, 
-        default=PLANET_ROCK, 
+        max_length=32,
+        choices=PLANET_TYPES,
+        default=PLANET_ROCK,
         db_index=True
     )
 
@@ -220,12 +220,12 @@ class CourseScreenshot(models.Model):
     course = models.ForeignKey(Course, related_name="screenshots")
     shot = models.ImageField(max_length=255)
     is_primary = models.BooleanField(
-        default=False, 
+        default=False,
         help_text="Is this the main/best image the user should see?",
         db_index=True
     )
     is_annotated = models.BooleanField(
-        default=False, 
+        default=False,
         help_text="Does this image have a course drawn on top of it?"
     )
     created = models.DateTimeField(default=timezone.now, db_index=True)

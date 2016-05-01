@@ -27,7 +27,7 @@
 
         <div class="links">
           <div class="search-form">
-            <form method="GET" action="{# % url 'courses_search' % #}">
+            <form method="GET" action="{% url 'courses_list' %}">
               <input type="text" name="q" value="">
               <button>Find Courses</button>
             </form>
