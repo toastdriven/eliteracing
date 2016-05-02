@@ -1,3 +1,7 @@
 export SECRET_KEY='a_test_secret_key'
 export DEBUG=1
 export DATABASE_URL='postgres://postgres@:5432/eliteracing'
+export AWS_ACCESS_KEY_ID='...'
+export AWS_SECRET_ACCESS_KEY='...'
+export SES_USER='...'
+export SES_PASS='...'
