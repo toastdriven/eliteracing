@@ -23,7 +23,7 @@
         "course_type": "surface",
         "nearby_outfitting": "Tuttle Gateway",
         "distance_from_primary": "0.0",
-        "distance_from_sol": "0.0",
+        "distance_from_sol": "133.81",
         "notes": "",
         "course_info": {
             "vehicle_type": "ship",
@@ -40,14 +40,14 @@
         "system": "Inovik",
         "course_type": "surface",
         "nearby_outfitting": "",
-        "distance_from_primary": "0.0",
-        "distance_from_sol": "0.0",
+        "distance_from_primary": "50.13",
+        "distance_from_sol": "61.24",
         "notes": "",
         "course_info": {
             "vehicle_type": "ship",
             "planet_name": "Inovik A 2 A",
             "coordinates": "0, 0",
-            "gravity": "0.0"
+            "gravity": "0.06"
         },
         "screenshots": [],
         "created_by": "FatHaggard",
@@ -59,7 +59,7 @@
         "course_type": "surface",
         "nearby_outfitting": "McMahon Depot",
         "distance_from_primary": "1052",
-        "distance_from_sol": "0.0",
+        "distance_from_sol": "103.95",
         "notes": "",
         "course_info": {
             "vehicle_type": "ship",
@@ -76,8 +76,8 @@
         "system": "Delkar",
         "course_type": "surface",
         "nearby_outfitting": "",
-        "distance_from_primary": "0.0",
-        "distance_from_sol": "0.0",
+        "distance_from_primary": "1162.43",
+        "distance_from_sol": "83.11",
         "notes": "",
         "course_info": {
             "vehicle_type": "ship",
@@ -95,12 +95,12 @@
         "course_type": "surface",
         "nearby_outfitting": "",
         "distance_from_primary": "0.0",
-        "distance_from_sol": "0.0",
+        "distance_from_sol": "114.95",
         "notes": "",
         "course_info": {
             "vehicle_type": "ship",
             "planet_name": "Lidals 8C",
-            "coordinates": "",
+            "coordinates": "0, 0",
             "gravity": "0.0"
         },
         "screenshots": [],

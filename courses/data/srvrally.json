@@ -19,7 +19,7 @@
             "planet_type": "rock"
         },
         "screenshots": [],
-        "created_by": "FatHaggard",
+        "created_by": "Buckyball",
         "is_approved": true
     },
     {
@@ -42,7 +42,7 @@
             "planet_type": "rock"
         },
         "screenshots": [],
-        "created_by": "Coconut_Head_",
+        "created_by": "RadLock",
         "is_approved": true
     },
     {
@@ -65,7 +65,7 @@
             "planet_type": "rock"
         },
         "screenshots": [],
-        "created_by": "FatHaggard",
+        "created_by": "RadLock",
         "is_approved": true
     },
     {
@@ -82,13 +82,13 @@
             "length": 69,
             "start_port_name": "Barreiros Arsenal",
             "end_port_name": "Kube-Mcdowell Enterprise",
-            "starting_line": "<optional-start-description>",
-            "finish_line": "<optional-end-description>",
+            "starting_line": "",
+            "finish_line": "",
             "gravity": "0.16",
             "planet_type": "ice"
         },
         "screenshots": [],
-        "created_by": "Coconut_Head_",
+        "created_by": "RadLock",
         "is_approved": true
     },
     {
@@ -111,7 +111,7 @@
             "planet_type": "ice"
         },
         "screenshots": [],
-        "created_by": "FatHaggard",
+        "created_by": "RadLock",
         "is_approved": true
     },
     {
@@ -134,7 +134,7 @@
             "planet_type": "rock"
         },
         "screenshots": [],
-        "created_by": "Coconut_Head_",
+        "created_by": "RadLock",
         "is_approved": true
     },
     {
@@ -157,7 +157,7 @@
             "planet_type": "ice"
         },
         "screenshots": [],
-        "created_by": "FatHaggard",
+        "created_by": "RadLock",
         "is_approved": true
     },
     {
@@ -180,7 +180,7 @@
             "planet_type": "ice"
         },
         "screenshots": [],
-        "created_by": "Coconut_Head_",
+        "created_by": "RadLock",
         "is_approved": true
     }
 ]

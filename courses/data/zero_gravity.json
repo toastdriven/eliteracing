@@ -4,8 +4,8 @@
         "system": "Altair",
         "course_type": "zerogravity",
         "nearby_outfitting": "Feynman Terminal, Bhritzameno",
-        "distance_from_primary": "0.0",
-        "distance_from_sol": "0.0",
+        "distance_from_primary": "666.81",
+        "distance_from_sol": "16.74",
         "notes": "",
         "course_info": {
             "vehicle_type": "ship",
@@ -22,8 +22,8 @@
         "system": "LHS 3356",
         "course_type": "zerogravity",
         "nearby_outfitting": "Feynman Terminal, Bhritzameno",
-        "distance_from_primary": "0.0",
-        "distance_from_sol": "0.0",
+        "distance_from_primary": "42.95",
+        "distance_from_sol": "25.31",
         "notes": "",
         "course_info": {
             "vehicle_type": "ship",

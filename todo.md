@@ -35,9 +35,9 @@
 * (DONE) Get uploading to S3 working (for local & prod)
 * (DONE) Integrate django-thumbnailer (or similar?)
 * (DONE) Finish HTML/CSS design
-* Add in all the original zero gravity series courses
-* Add About/Links view
-* Fix the broken/missing data as much as possible
+* (DONE) Add About/Links view
+* (DONE) Add in all the original zero gravity series courses
+* (DONE) Fix the broken/missing data as much as possible
 
 
 # TODO Maybe Pre-launch
