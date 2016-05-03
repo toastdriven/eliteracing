@@ -6,11 +6,15 @@
   <li>
     <strong>Station:</strong> {{ info.station_name }}
   </li>
+  {% if info.number_of_rings %}
   <li>
     <strong>Number of Rings:</strong> {{ info.number_of_rings }}
   </li>
+  {% endif %}
+  {% if info.length %}
   <li>
     <strong>Length:</strong> {{ info.length }} km
   </li>
+  {% endif %}
 </ul>
 {% endwith %}

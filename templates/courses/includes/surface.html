@@ -11,7 +11,9 @@
 <li>
   <strong>Coordinates:</strong> {{ info.coordinates }}
 </li>
+{% if info.gravity %}
 <li>
   <strong>Gravity:</strong> {{ info.gravity }}
 </li>
+{% endif %}
 {% endwith %}

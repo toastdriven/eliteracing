@@ -8,9 +8,11 @@
 <li>
   <strong>Planet:</strong> {{ info.planet_name }}
 </li>
+{% if info.length %}
 <li>
   <strong>Length:</strong> {{ info.length }} km
 </li>
+{% endif %}
 <li>
   <strong>Start Port:</strong> {{ info.start_port_name }}
   {% if info.starting_line %}(Start Line: {{ info.starting_line }}){% endif %}
@@ -19,10 +21,14 @@
   <strong>Finish Port:</strong> {{ info.end_port_name }}
   {% if info.finish_line %}(Finish Line: {{ info.finish_line }}){% endif %}
 </li>
+{% if info.planet_type %}
 <li>
   <strong>Planet Type:</strong> {{ info.get_planet_type_display }}
 </li>
+{% endif %}
+{% if info.gravity %}
 <li>
   <strong>Gravity:</strong> {{ info.gravity }}
 </li>
+{% endif %}
 {% endwith %}

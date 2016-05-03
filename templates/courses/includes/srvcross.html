@@ -11,9 +11,11 @@
 <li>
   <strong>Port:</strong> {{ info.port_name }}
 </li>
+{% if info.gravity %}
 <li>
   <strong>Gravity:</strong> {{ info.gravity }}
 </li>
+{% endif %}
 <li>
   <strong>Tidally Locked:</strong> {{ info.tidally_locked|yesno|capfirst }}
 </li>

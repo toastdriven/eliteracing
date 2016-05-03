@@ -11,7 +11,9 @@
 <li>
   <strong>Port:</strong> {{ info.port_name }}
 </li>
+{% if info.gravity %}
 <li>
   <strong>Gravity:</strong> {{ info.gravity }}
 </li>
+{% endif %}
 {% endwith %}

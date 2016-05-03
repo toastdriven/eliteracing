@@ -28,6 +28,7 @@
       <li>
         <strong>Type:</strong> {{ course.get_course_type_display }}
       </li>
+
       {% if course.zerogravitycourse %}
         {% include "courses/includes/zerogravity.html" %}
       {% endif %}
@@ -43,15 +44,26 @@
       {% if course.stadiumcourse %}
         {% include "courses/includes/stadium.html" %}
       {% endif %}
+
+      {% if course.nearby_outfitting %}
       <li>
         <strong>Nearby Outfitting:</strong> {{ course.nearby_outfitting }}
       </li>
+      {% endif %}
+      {% if course.distance_from_primary %}
       <li>
         <strong>Distance From Primary:</strong> {{ course.distance_from_primary }} Ls
       </li>
+      {% endif %}
+      {% if course.distance_from_sol %}
       <li>
         <strong>Distance From Sol:</strong> {{ course.distance_from_sol }} Ly
       </li>
+      {% elif course.system.lower.strip == 'sol' %}
+      <li>
+        <strong>Located at the birthplace of humankind, Sol.</strong>
+      </li>
+      {% endif %}
       <li>
         <strong>Created By:</strong> {{ course.created_by.name }}
         on {{ course.created|date:"F j, Y" }}
