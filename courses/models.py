@@ -113,7 +113,7 @@ class ZeroGravityCourse(BaseCourseInfo):
     The traditional/original race type around a station.
     """
     station_name = models.CharField(max_length=255, db_index=True)
-    number_of_rings = models.PositiveIntegerField(blank=True, default=1)
+    number_of_rings = models.PositiveIntegerField(blank=True)
     length = models.PositiveIntegerField(help_text='In Kilometers')
 
     def save(self, *args, **kwargs):
