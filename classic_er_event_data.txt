@@ -1,0 +1,76 @@
+Star: 	 Luyten's Star
+Station: Ashby City
+NO: 	 Bhritz
+Dfp: 	 294.86
+DfS: 	 12.39
+Rings: 	 0
+
+Star: 	 Sol
+Station: Galileo
+NO: 	 Bhritz
+Dfp: 	 491.39
+DfS: 	 0
+Rings: 	 1
+
+Star: 	 Sol
+Station: M. Gorbachev
+NO: 	 Bhritz
+Dfp: 	 491.89
+DfS: 	 0
+Rings: 	 2
+
+Star: 	 Sol
+Station: Li Qing Jao
+NO: 	 Bhritz
+Dfp: 	 491.77
+DfS: 	 0
+Rings: 	 0
+
+Star: 	 Sol
+Station: Abraham Lincoln
+NO: 	 Bhritz
+Dfp: 	 491.89
+DfS: 	 0
+Rings: 	 2
+
+Star: 	 LHS 3006
+Station: Leonard Nimoy Station
+NO: 	 Aulin Enterprise, Aulin
+Dfp: 	 58.75
+DfS: 	 36.5
+Rings: 	 2
+
+Star: 	 STF 1774
+Station: Froude Ring
+NO: 	 
+Dfp: 	 590.05
+DfS: 	 82.62
+Rings: 	 2
+
+Star: 	 Gateway
+Station: Dublin Citadel
+NO: 	 
+Dfp: 	 29.47
+DfS: 	 78.62
+Rings: 	 2
+
+Star: 	 Kamadhenu
+Station: Shajn Market
+NO: 	 
+Dfp: 	 455.84
+DfS: 	 149.24
+Rings: 	 2
+
+Star: 	 Cubeo
+Station: Adelman Station
+NO: 	 
+Dfp: 	 425.06
+DfS: 	 218.56
+Rings: 	 1
+
+Star: 	 Synteini
+Station: Lagerkvist Gateway
+NO: 	 
+Dfp: 	 125.32
+DfS: 	 96.66
+Rings: 	 2
