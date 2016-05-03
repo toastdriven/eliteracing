@@ -143,6 +143,11 @@ EMAIL_HOST = 'email-smtp.us-east-1.amazonaws.com'
 EMAIL_PORT = '25'
 EMAIL_HOST_USER = os.environ['SES_USER']
 EMAIL_HOST_PASSWORD = os.environ['SES_PASS']
+EMAIL_SUBJECT_PREFIX = '[edracers] '
+SERVER_EMAIL = 'server@edracers.com'
+ADMINS = [
+    ('Daniel', 'daniel@toastdriven.com'),
+]
 
 
 # Storages settings
