@@ -1,8 +1,8 @@
 from django.contrib import admin
 
 from .models import (
-    Course, 
-    ZeroGravityCourse, 
+    Course,
+    ZeroGravityCourse,
     SurfaceCourse,
     SRVRallyCourse,
     SRVCrossCourse,
@@ -13,37 +13,32 @@ from .models import (
 
 class ZeroGravityCourseInline(admin.StackedInline):
     model = ZeroGravityCourse
-    max_num = 1
     exclude = ('vehicle_type', 'created', 'updated')
 
 
 class SurfaceCourseInline(admin.StackedInline):
     model = SurfaceCourse
-    max_num = 1
     exclude = ('vehicle_type', 'created', 'updated')
 
 
 class SRVRallyCourseInline(admin.StackedInline):
     model = SRVRallyCourse
-    max_num = 1
     exclude = ('vehicle_type', 'created', 'updated')
 
 
 class SRVCrossCourseInline(admin.StackedInline):
     model = SRVCrossCourse
-    max_num = 1
     exclude = ('vehicle_type', 'created', 'updated')
 
 
 class StadiumCourseInline(admin.StackedInline):
-    model = ZeroGravityCourse
-    max_num = 1
+    model = StadiumCourse
     exclude = ('vehicle_type', 'created', 'updated')
 
 
 class CourseScreenshotInline(admin.StackedInline):
     model = CourseScreenshot
-    extra = 1
+    extra = 0
     exclude = ('created', 'updated')
 
 

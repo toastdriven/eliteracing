@@ -113,7 +113,7 @@ class ZeroGravityCourse(BaseCourseInfo):
     The traditional/original race type around a station.
     """
     station_name = models.CharField(max_length=255, db_index=True)
-    number_of_rings = models.PositiveIntegerField(default=1)
+    number_of_rings = models.PositiveIntegerField(blank=True, default=1)
     length = models.PositiveIntegerField(help_text='In Kilometers')
 
     def save(self, *args, **kwargs):
@@ -129,7 +129,7 @@ class SurfaceCourse(BaseCourseInfo):
     """
     planet_name = models.CharField(max_length=255, db_index=True)
     coordinates = models.CharField(max_length=64)
-    gravity = models.DecimalField(max_digits=5, decimal_places=2, default='1.0')
+    gravity = models.DecimalField(max_digits=5, decimal_places=2)
 
     def save(self, *args, **kwargs):
         if not self.vehicle_type:
@@ -168,11 +168,10 @@ class SRVRallyCourse(BaseCourseInfo):
     end_port_name = models.CharField(max_length=255)
     starting_line = models.CharField(max_length=255, blank=True, default='')
     finish_line = models.CharField(max_length=255, blank=True, default='')
-    gravity = models.DecimalField(max_digits=5, decimal_places=2, default='1.0')
+    gravity = models.DecimalField(max_digits=5, decimal_places=2)
     planet_type = models.CharField(
         max_length=32,
         choices=PLANET_TYPES,
-        default=PLANET_ROCK,
         db_index=True
     )
 
@@ -190,7 +189,7 @@ class SRVCrossCourse(BaseCourseInfo):
     """
     planet_name = models.CharField(max_length=255, db_index=True)
     port_name = models.CharField(max_length=255, db_index=True)
-    gravity = models.DecimalField(max_digits=5, decimal_places=2, default='1.0')
+    gravity = models.DecimalField(max_digits=5, decimal_places=2)
     tidally_locked = models.BooleanField(default=False)
 
     def save(self, *args, **kwargs):
@@ -207,7 +206,7 @@ class StadiumCourse(BaseCourseInfo):
     """
     planet_name = models.CharField(max_length=255, db_index=True)
     port_name = models.CharField(max_length=255, db_index=True)
-    gravity = models.DecimalField(max_digits=5, decimal_places=2, default='1.0')
+    gravity = models.DecimalField(max_digits=5, decimal_places=2)
 
     def save(self, *args, **kwargs):
         if not self.vehicle_type:
