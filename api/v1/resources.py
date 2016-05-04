@@ -228,3 +228,10 @@ class CourseResource(DjangoResource):
                 name=cls.build_url_name('random_course', name_prefix)
             ),
         ]
+
+    def build_response(self, *args, **kwargs):
+        resp = super(CourseResource, self).build_response(*args, **kwargs)
+        # Set an unrestricted CORS header so people can fetch the data
+        # cross-site using JS.
+        resp['Access-Control-Allow-Origin'] = '*'
+        return resp
