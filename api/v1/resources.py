@@ -1,7 +1,10 @@
 import time
 
+from django.conf import settings
 from django.conf.urls import url
 from django.db.models import Q
+
+from easy_thumbnails.files import get_thumbnailer
 
 from restless.exceptions import BadRequest, NotFound
 from restless.dj import DjangoResource
@@ -47,7 +50,7 @@ class CourseResource(DjangoResource):
 
         if order == 'asc':
             return 'created'
-        
+
         return '-created'
 
     def _apply_filters(self, qs):
@@ -64,7 +67,7 @@ class CourseResource(DjangoResource):
             course_type = self.request.GET['course_type']
 
             if course_type not in (
-                'all', 'zerogravity', 'surface', 'srvrally', 'srvcross', 
+                'all', 'zerogravity', 'surface', 'srvrally', 'srvcross',
                 'stadium'
             ):
                 raise BadRequest("Invalid course_type parameter.")
@@ -114,7 +117,7 @@ class CourseResource(DjangoResource):
 
         # Apply ordering just before slicing.
         qs = qs.order_by(order)
-        
+
         # Slice it down to a page-worth.
         limit = self._get_limit()
         return qs[:limit]
@@ -153,9 +156,14 @@ class CourseResource(DjangoResource):
             "url": data.get_absolute_url(),
         }
 
+        thumb_opts = settings.THUMBNAIL_ALIASES['courses.CourseScreenshot.shot']['primary_thumbnail']
+
         for screenshot in data.screenshots.all():
-            # FIXME: Verify this.
-            prepped['screenshots'].append(screenshot.url)
+            thumb_url = get_thumbnailer(screenshot.shot).get_thumbnail(thumb_opts).url
+            prepped['screenshots'].append({
+                'fullsize': screenshot.shot.url,
+                'thumbnail': thumb_url,
+            })
 
         if data.course_type == Course.COURSE_ZEROGRAVITY:
             prepped['course_info'] = {
@@ -215,8 +223,8 @@ class CourseResource(DjangoResource):
         urlpatterns = super(CourseResource, cls).urls(name_prefix=name_prefix)
         return urlpatterns + [
             url(
-                r'^random/$', 
-                cls.as_view('random_course'), 
+                r'^random/$',
+                cls.as_view('random_course'),
                 name=cls.build_url_name('random_course', name_prefix)
             ),
         ]
