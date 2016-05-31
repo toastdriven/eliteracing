@@ -33,16 +33,22 @@
             </form>
           </div>
 
-          <!--
           <ul>
+            {% if user.is_authenticated %}
+            <form method="post" action="{% url 'accounts_logout' %}">
+              {% csrf_token %}
+              <button>Logout</button>
+            </form>
+            {% else %}
             <li>
-              Login
+              <a href="{% url 'accounts_login' %}">Login</a>
             </li>
             <li>
-              Sign-Up
+              <a href="{% url 'accounts_register' %}">Sign Up</a>
             </li>
+            {% endif %}
           </ul>
-          -->
+
           <nav>
             <ul>
               <li>

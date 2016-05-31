@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block page_title %}{{ block.super }}: {{ cmdr.name }}{% endblock %}
+
+{% block breadcrumbs %}
+<ul class="breadcrumbs">
+  <li>
+    <a href="{% url 'home' %}">Home</a>
+  </li>
+  <li>
+    Commanders
+  </li>
+  <li>
+    {{ cmdr.name }}
+  </li>
+</ul>
+{% endblock %}
+
+{% block content %}
+<div>
+  <h2>
+    CMDR {{ cmdr.name }}
+  </h2>
+
+  {% if cmdr.user == request.user %}
+  <div>
+    <strong>API Token:</strong>
+    <code>{{ cmdr.api_token }}</code>
+  </div>
+  {% endif %}
+
+  <hr>
+
+  <h3>Courses Contributted {% if courses %}({{ courses|length }} total){% endif %}</h3>
+
+  <div class="course-list">
+    {% for course in courses %}
+      {% include 'courses/includes/small_course.html' %}
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

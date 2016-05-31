@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'easy_thumbnails',
     'storages',
 
+    'accounts',
     'cmdrs',
     'courses',
     'news',

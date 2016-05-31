@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block page_title %}{{ block.super }}: Logout{% endblock %}
+
+{% block breadcrumbs %}
+<ul class="breadcrumbs">
+  <li>
+    <a href="{% url 'home' %}">Home</a>
+  </li>
+  <li>
+    Logout
+  </li>
+</ul>
+{% endblock %}
+
+{% block content %}
+<div >
+  <h2>
+    You've Been Logged Out
+  </h2>
+
+  <p>
+    Thanks for visiting! If you'd like, you can
+    <a href="{% url 'accounts_login' %}">login</a> again.
+  </p>
+</div>
+{% endblock %}
