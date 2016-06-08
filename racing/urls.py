@@ -18,12 +18,24 @@ from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.contrib import admin
 
+from registration.backends.simple.views import RegistrationView
+
+from accounts.forms import SignupForm
 from racing.views import index
+
+
+class CommanderRegistrationView(RegistrationView):
+    form_class = SignupForm
 
 
 urlpatterns = [
     url(r'^$', index, name='home'),
-    url(r'^accounts/', include('accounts.urls')),
+    url(r'^accounts/register/$',
+        CommanderRegistrationView.as_view(),
+        # {'form_class': SignupForm},
+        name='registration_register'
+    ),
+    url(r'accounts/', include('registration.auth_urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^api/', include('api.urls')),
     url(r'^cmdrs/', include('cmdrs.urls')),

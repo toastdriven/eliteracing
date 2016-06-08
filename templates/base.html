@@ -35,16 +35,15 @@
 
           <ul>
             {% if user.is_authenticated %}
-            <form method="post" action="{% url 'accounts_logout' %}">
-              {% csrf_token %}
-              <button>Logout</button>
-            </form>
+            <li>
+              <a href="{% url 'auth_logout' %}">Logout</a>
+            </li>
             {% else %}
             <li>
-              <a href="{% url 'accounts_login' %}">Login</a>
+              <a href="{% url 'auth_login' %}">Login</a>
             </li>
             <li>
-              <a href="{% url 'accounts_register' %}">Sign Up</a>
+              <a href="{% url 'registration_register' %}">Sign Up</a>
             </li>
             {% endif %}
           </ul>

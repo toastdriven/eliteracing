@@ -43,9 +43,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'easy_thumbnails',
+    'registration',
     'storages',
 
-    'accounts',
     'cmdrs',
     'courses',
     'news',
