@@ -38,7 +38,7 @@ class CourseResource(DjangoResource):
             raise BadRequest("Invalid limit parameter.")
 
         if limit > 1000:
-            limit == 1000
+            limit = 1000
 
         return limit
 
