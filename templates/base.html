@@ -26,15 +26,13 @@
         </div>
 
         <div class="links">
-          <div class="search-form">
-            <form method="GET" action="{% url 'courses_list' %}">
-              <input type="text" name="q" value="">
-              <button>Find Courses</button>
-            </form>
-          </div>
-
-          <ul>
+          <ul class="login-logout">
             {% if user.is_authenticated %}
+            <li>
+              {% with user.commanders.first as cmdr %}
+              Welcome, <a href="{% url 'cmdr_detail' cmdr_name=cmdr.name %}">CMDR {{ cmdr.name }}!</a>
+              {% endwith %}
+            </li>
             <li>
               <a href="{% url 'auth_logout' %}">Logout</a>
             </li>
@@ -47,6 +45,13 @@
             </li>
             {% endif %}
           </ul>
+
+          <div class="search-form">
+            <form method="GET" action="{% url 'courses_list' %}">
+              <input type="text" name="q" value="">
+              <button>Find Courses</button>
+            </form>
+          </div>
 
           <nav>
             <ul>

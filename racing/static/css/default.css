@@ -119,7 +119,21 @@ header .search-form {
   display: flex;
   flex: 1;
   justify-content: flex-end;
-  align-items: center;
+  align-items: top;
+}
+
+header .login-logout {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  list-style: none;
+}
+
+header .login-logout li a,
+header .login-logout li a:hover,
+header .login-logout li a:visited {
+  color: #FFFFFF;
+  text-shadow: #000 2px 2px 2px;
 }
 
 nav ul {
