@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block page_title %}{{ block.super }}: Register{% endblock %}
+
+{% block breadcrumbs %}
+<ul class="breadcrumbs">
+  <li>
+    <a href="{% url 'home' %}">Home</a>
+  </li>
+  <li>
+    Register
+  </li>
+</ul>
+{% endblock %}
+
+{% block content %}
+<div>
+  <h2>
+    Register
+  </h2>
+
+  <form method="post" action="">
+    {% csrf_token %}
+    <table>
+      {{ form.as_table }}
+      <tr>
+        <td colspan="2">
+          <button>Register</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+{% endblock %}

@@ -18,13 +18,21 @@ from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.contrib import admin
 
+
+from accounts.views import CommanderRegistrationView
 from racing.views import index
 
 
 urlpatterns = [
     url(r'^$', index, name='home'),
+    url(r'^accounts/register/$',
+        CommanderRegistrationView.as_view(),
+        name='registration_register'
+    ),
+    url(r'accounts/', include('registration.auth_urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^api/', include('api.urls')),
+    url(r'^cmdrs/', include('cmdrs.urls')),
     url(r'^courses/', include('courses.urls')),
     url(r'^docs/', include('docs.urls')),
     url(r'^news/', include('news.urls')),

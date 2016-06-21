@@ -33,16 +33,21 @@
             </form>
           </div>
 
-          <!--
           <ul>
+            {% if user.is_authenticated %}
             <li>
-              Login
+              <a href="{% url 'auth_logout' %}">Logout</a>
+            </li>
+            {% else %}
+            <li>
+              <a href="{% url 'auth_login' %}">Login</a>
             </li>
             <li>
-              Sign-Up
+              <a href="{% url 'registration_register' %}">Sign Up</a>
             </li>
+            {% endif %}
           </ul>
-          -->
+
           <nav>
             <ul>
               <li>

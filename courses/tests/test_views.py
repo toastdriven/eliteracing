@@ -162,7 +162,7 @@ class CourseViewsTestCase(TestCase):
 
         self.list_url = reverse('courses_list')
         self.detail_url = reverse(
-            'courses_detail', 
+            'courses_detail',
             kwargs={
                 'id': self.course_2.pk,
             }
@@ -181,12 +181,20 @@ class CourseViewsTestCase(TestCase):
         resp = self.client.get(self.list_url + '?page=200')
         self.assertEqual(resp.status_code, 404)
 
-    def test_list_filtering_vehicle_type(self):
+    def test_list_filtering_vehicle_type_ship(self):
         resp = self.client.get(self.list_url + '?vehicle_type=ship')
         self.assertEqual(resp.status_code, 200)
         self.assertEqual(len(resp.context['page']), 4)
         self.assertTrue(self.course_6 in resp.context['page'])
         self.assertEqual(resp.context['vehicle_type'], 'ship')
+        self.assertEqual(resp.context['course_type'], 'all')
+
+    def test_list_filtering_vehicle_type_srv(self):
+        resp = self.client.get(self.list_url + '?vehicle_type=srv')
+        self.assertEqual(resp.status_code, 200)
+        self.assertEqual(len(resp.context['page']), 2)
+        self.assertTrue(self.course_5 in resp.context['page'])
+        self.assertEqual(resp.context['vehicle_type'], 'srv')
         self.assertEqual(resp.context['course_type'], 'all')
 
     def test_list_filtering_course_type(self):
@@ -196,6 +204,15 @@ class CourseViewsTestCase(TestCase):
         self.assertTrue(self.course_2 in resp.context['page'])
         self.assertEqual(resp.context['vehicle_type'], 'all')
         self.assertEqual(resp.context['course_type'], 'zerogravity')
+
+    def test_list_filtering_search(self):
+        resp = self.client.get(self.list_url + '?q=moley')
+        self.assertEqual(resp.status_code, 200)
+        self.assertEqual(len(resp.context['page']), 1)
+        self.assertTrue(self.course_4 in resp.context['page'])
+        self.assertEqual(resp.context['vehicle_type'], 'all')
+        self.assertEqual(resp.context['course_type'], 'all')
+        self.assertEqual(resp.context['search'], 'moley')
 
     def test_detail(self):
         resp = self.client.get(self.detail_url)

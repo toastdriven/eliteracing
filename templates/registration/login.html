@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block page_title %}{{ block.super }}: Login{% endblock %}
+
+{% block breadcrumbs %}
+<ul class="breadcrumbs">
+  <li>
+    <a href="{% url 'home' %}">Home</a>
+  </li>
+  <li>
+    Login
+  </li>
+</ul>
+{% endblock %}
+
+{% block content %}
+<div>
+  <h2>
+    Login
+  </h2>
+
+  <form method="post" action="">
+    {% csrf_token %}
+    <input type="hidden" name="next" value="{% url 'home' %}">
+    <table>
+      {{ form.as_table }}
+      <tr>
+        <td colspan="2">
+          <a href="{% url 'auth_password_reset' %}">Forgot your password?</a>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <button>Login</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+{% endblock %}

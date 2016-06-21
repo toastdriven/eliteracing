@@ -187,7 +187,7 @@ class APIv1CoursesTestCase(TestCase):
 
     def make_detail_url(self, course):
         return reverse(
-            'api_course_detail', 
+            'api_course_detail',
             kwargs={
                 'pk': course.pk,
             }
@@ -207,7 +207,7 @@ class APIv1CoursesTestCase(TestCase):
 
         self.assertEqual(data['meta'], {
             'limit': 100,
-            'start': None, 
+            'start': None,
             'total': 6,
         })
 
@@ -216,6 +216,28 @@ class APIv1CoursesTestCase(TestCase):
 
         # Descending order by created by default.
         self.assertEqual(data['courses'][0]['title'], self.course_6.title)
+
+    def test_list_invalid_start(self):
+        resp = self.client.get(self.make_list_url(
+            start='abc'
+        ))
+        self.assertEqual(resp.status_code, 400)
+
+    def test_list_invalid_order(self):
+        resp = self.client.get(self.make_list_url(
+            order='Small veggie burger w/ sweet potato fries, hold the pickles'
+        ))
+        self.assertEqual(resp.status_code, 400)
+
+    def test_list_invalid_limit(self):
+        resp = self.client.get(self.make_list_url(
+            limit='1001'
+        ))
+        self.assertEqual(resp.status_code, 200)
+
+        data = json.loads(resp.content)
+
+        self.assertEqual(data['meta']['limit'], 1000)
 
     def test_list_ordering(self):
         resp = self.client.get(self.make_list_url(
@@ -227,7 +249,7 @@ class APIv1CoursesTestCase(TestCase):
 
         self.assertEqual(data['meta'], {
             'limit': 100,
-            'start': None, 
+            'start': None,
             'total': 6,
         })
 
@@ -247,7 +269,7 @@ class APIv1CoursesTestCase(TestCase):
 
         self.assertEqual(data['meta'], {
             'limit': 100,
-            'start': self.course_3.pk, 
+            'start': self.course_3.pk,
             # Total is still 6, because that's the whole set.
             'total': 6,
         })
@@ -270,7 +292,7 @@ class APIv1CoursesTestCase(TestCase):
 
         self.assertEqual(data['meta'], {
             'limit': 100,
-            'start': self.course_3.pk, 
+            'start': self.course_3.pk,
             # Total is still 6, because that's the whole set.
             'total': 6,
         })
@@ -294,7 +316,7 @@ class APIv1CoursesTestCase(TestCase):
 
         self.assertEqual(data['meta'], {
             'limit': 2,
-            'start': self.course_2.pk, 
+            'start': self.course_2.pk,
             # Total is still 6, because that's the whole set.
             'total': 6,
         })
@@ -311,7 +333,7 @@ class APIv1CoursesTestCase(TestCase):
         self.assertEqual(resp.status_code, 200)
 
         data = json.loads(resp.content)
-        
+
         self.assertCourses(data, [
             self.course_6,
             self.course_5,
@@ -328,7 +350,7 @@ class APIv1CoursesTestCase(TestCase):
         self.assertEqual(resp.status_code, 200)
 
         data = json.loads(resp.content)
-        
+
         self.assertCourses(data, [
             self.course_6,
             self.course_3,
@@ -343,7 +365,7 @@ class APIv1CoursesTestCase(TestCase):
         self.assertEqual(resp.status_code, 200)
 
         data = json.loads(resp.content)
-        
+
         self.assertCourses(data, [
             self.course_5,
             self.course_4,
@@ -356,7 +378,7 @@ class APIv1CoursesTestCase(TestCase):
         self.assertEqual(resp.status_code, 200)
 
         data = json.loads(resp.content)
-        
+
         self.assertCourses(data, [
             self.course_6,
             self.course_5,
@@ -373,7 +395,7 @@ class APIv1CoursesTestCase(TestCase):
         self.assertEqual(resp.status_code, 200)
 
         data = json.loads(resp.content)
-        
+
         self.assertCourses(data, [
             self.course_2,
             self.course_1,
@@ -386,7 +408,7 @@ class APIv1CoursesTestCase(TestCase):
         self.assertEqual(resp.status_code, 200)
 
         data = json.loads(resp.content)
-        
+
         self.assertCourses(data, [
             self.course_4,
         ])
@@ -398,7 +420,7 @@ class APIv1CoursesTestCase(TestCase):
         self.assertEqual(resp.status_code, 200)
 
         data = json.loads(resp.content)
-        
+
         self.assertCourses(data, [
             self.course_6,
             self.course_5,
@@ -415,7 +437,7 @@ class APIv1CoursesTestCase(TestCase):
         self.assertEqual(resp.status_code, 200)
 
         data = json.loads(resp.content)
-        
+
         self.assertCourses(data, [])
 
     def test_list_cmdr_branch(self):
@@ -425,7 +447,7 @@ class APIv1CoursesTestCase(TestCase):
         self.assertEqual(resp.status_code, 200)
 
         data = json.loads(resp.content)
-        
+
         self.assertCourses(data, [
             self.course_6,
             self.course_4,
@@ -438,7 +460,7 @@ class APIv1CoursesTestCase(TestCase):
         self.assertEqual(resp.status_code, 200)
 
         data = json.loads(resp.content)
-        
+
         self.assertCourses(data, [
             self.course_5,
             self.course_2,
@@ -451,7 +473,7 @@ class APIv1CoursesTestCase(TestCase):
         self.assertEqual(resp.status_code, 200)
 
         data = json.loads(resp.content)
-        
+
         self.assertCourses(data, [
             self.course_3,
             self.course_1,
@@ -493,7 +515,7 @@ class APIv1CoursesTestCase(TestCase):
         self.assertEqual(resp.status_code, 200)
 
         data = json.loads(resp.content)
-        
+
         self.assertEqual(data, {
             'course_info': {
                 'coordinates': u'10, -25.67890',
@@ -522,7 +544,7 @@ class APIv1CoursesTestCase(TestCase):
         self.assertEqual(resp.status_code, 200)
 
         data = json.loads(resp.content)
-        
+
         self.assertEqual(data, {
             'course_info': {
                 'end_port_name': u'LOLOLOLOL',
@@ -556,7 +578,7 @@ class APIv1CoursesTestCase(TestCase):
         self.assertEqual(resp.status_code, 200)
 
         data = json.loads(resp.content)
-        
+
         self.assertEqual(data, {
             'course_info': {
                 'gravity': u'0.40',
@@ -586,7 +608,7 @@ class APIv1CoursesTestCase(TestCase):
         self.assertEqual(resp.status_code, 200)
 
         data = json.loads(resp.content)
-        
+
         self.maxDiff = None
         self.assertEqual(data, {
             'course_info': {
@@ -616,6 +638,6 @@ class APIv1CoursesTestCase(TestCase):
         self.assertEqual(resp.status_code, 200)
 
         data = json.loads(resp.content)
-        
+
         self.assertTrue('title' in data)
 
